@@ -74,14 +74,27 @@ TransactionList.prototype.render = function () {
             justifyContent: 'center',
           },
         }, [
-          h('p', {
+         h('p', {
             style: {
               marginTop: '50px',
+            }
+            ,
+          }, 'Tx history is currently not supported, please click on menu above the send button => View account on Explr '),
+
+      /*    h(
+            'button',
+            {
+              onClick: () => {
+                const { selected, network } = this.props
+                const url = 'http://nekonium.network/account/' + selected//genAccountLink(selected, network)
+                global.platform.openWindow({ url })
+              },
             },
-          }, 'No transaction history.'),
+            'View account on Explr',
+          ),
+*/
         ]),
       ]),
     ])
   )
 }
-

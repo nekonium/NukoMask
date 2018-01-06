@@ -188,11 +188,11 @@ class AccountDropdowns extends Component {
             closeMenu: () => {},
             onClick: () => {
               const { selected, network } = this.props
-              const url = genAccountLink(selected, network)
+              const url = 'http://nekonium.network/account/' + selected//genAccountLink(selected, network)
               global.platform.openWindow({ url })
             },
           },
-          'View account on Etherscan',
+          'View account on Explr',
         ),
         h(
           DropdownMenuItem,
