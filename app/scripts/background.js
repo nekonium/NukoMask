@@ -149,6 +149,6 @@ function triggerUi () {
 // On first install, open a window to MetaMask website to how-it-works.
 extension.runtime.onInstalled.addListener(function (details) {
   if ((details.reason === 'install') && (!METAMASK_DEBUG)) {
-    extension.tabs.create({url: 'https://metamask.io/#how-it-works'})
+    extension.tabs.create({url: 'https://nekonium.github.io/'}) //to be replaced with nuko #how it works website
   }
 })

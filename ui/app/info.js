@@ -46,12 +46,13 @@ InfoScreen.prototype.render = function () {
           // current version number
 
           h('.info.info-gray', [
-            h('div', 'Metamask'),
+            h('div', 'Nukoja'),
+            h('div', `Version: ${version} `),
             h('div', {
               style: {
                 marginBottom: '10px',
               },
-            }, `Version: ${version}`),
+            }, 'Illustration by こべね @ Discord'),
           ]),
 
           h('div', {
@@ -61,11 +62,32 @@ InfoScreen.prototype.render = function () {
             [
               h('div', [
                 h('a', {
+                  href: 'http://nekonium.github.io',
+                  target: '_blank',
+                  onClick (event) { this.navigateTo(event.target.href) },
+                }, [
+                  h('div.info', 'Nuko project'),
+                ]),
+              ]),
+
+              h('div', [
+                h('a', {
+                  href: 'http://nekonium.network',
+                  target: '_blank',
+                  onClick (event) { this.navigateTo(event.target.href) },
+                }, [
+                  h('div.info', 'Block explorer'),
+                ]),
+              ]),
+
+
+              h('div', [
+                h('a', {
                   href: 'https://metamask.io/privacy.html',
                   target: '_blank',
                   onClick (event) { this.navigateTo(event.target.href) },
                 }, [
-                  h('div.info', 'Privacy Policy'),
+                  h('div.info', 'Metamask\'s Privacy Policy'),
                 ]),
               ]),
               h('div', [
@@ -74,7 +96,7 @@ InfoScreen.prototype.render = function () {
                   target: '_blank',
                   onClick (event) { this.navigateTo(event.target.href) },
                 }, [
-                  h('div.info', 'Terms of Use'),
+                  h('div.info', 'Metamask\'s Terms of Use'),
                 ]),
               ]),
               h('div', [
@@ -83,7 +105,7 @@ InfoScreen.prototype.render = function () {
                   target: '_blank',
                   onClick (event) { this.navigateTo(event.target.href) },
                 }, [
-                  h('div.info', 'Attributions'),
+                  h('div.info', 'Metamask\'s Attributions'),
                 ]),
               ]),
             ]
@@ -122,7 +144,7 @@ InfoScreen.prototype.render = function () {
                       WebkitFilter: 'grayscale(100%)',
                     },
                   }),
-                  h('div.info', 'Visit our web site'),
+                  h('div.info', 'Visit Metamask web site'),
                 ]),
               ]),
 
@@ -152,4 +174,3 @@ InfoScreen.prototype.render = function () {
 InfoScreen.prototype.navigateTo = function (url) {
   global.platform.openWindow({ url })
 }
-

@@ -45,7 +45,7 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
   return (
 
     h('.initialize-screen.flex-column.flex-center.flex-grow', [
-
+/*
       h(Mascot, {
         animationEventEmitter: this.animationEventEmitter,
       }),
@@ -58,7 +58,13 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
           marginBottom: 10,
         },
       }, 'MetaMask'),
-
+*/
+h('img', {
+  style: {
+    width: '180px',
+  },
+  src: "/images/nukoja_green.png",
+}, ),
 
       h('div', [
         h('h3', {
