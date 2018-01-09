@@ -67,7 +67,8 @@ TransactionListItem.prototype.render = function () {
         }
         event.stopPropagation()
         if (!transaction.hash || !isLinkable) return
-        var url = explorerLink(transaction.hash, parseInt(network))
+        //var url = explorerLink(transaction.hash, parseInt(network))
+        var url = "http://nekonium.network/tx/" + transaction.hash
         global.platform.openWindow({ url })
       },
       style: {
