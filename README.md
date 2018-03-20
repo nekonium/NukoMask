@@ -6,7 +6,7 @@ Forked from Metamask. Compatible with nekonium nodes. Still under development
 
 ## Support
 
-If you're a user seeking support, [here is our support site](http://metamask.consensyssupport.happyfox.com).
+If you're a user seeking support, [here is our support site](https://metamask.helpscoutdocs.com/).
 
 ## Developing Compatible Dapps
 
