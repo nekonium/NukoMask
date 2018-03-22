@@ -57,7 +57,7 @@
   "permissions": [
     "storage",
     "clipboardWrite",
-    "http://localhost:8545/",
+    "http://localhost:8293/",
     "https://*.infura.io/"
     ],
   "web_accessible_resources": [

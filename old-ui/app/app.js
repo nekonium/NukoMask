@@ -273,56 +273,56 @@ App.prototype.renderNetworkDropdown = function () {
       ]
     ),
 
-    h(
-      DropdownMenuItem,
-      {
-        key: 'ropsten',
-        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-        onClick: () => props.dispatch(actions.setProviderType('ropsten')),
-        style: {
-          fontSize: '18px',
-        },
-      },
-      [
-        h('.menu-icon.red-dot'),
-        'Ropsten Test Network',
-        providerType === 'ropsten' ? h('.check', '✓') : null,
-      ]
-    ),
+    // h(
+    //   DropdownMenuItem,
+    //   {
+    //     key: 'ropsten',
+    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+    //     onClick: () => props.dispatch(actions.setProviderType('ropsten')),
+    //     style: {
+    //       fontSize: '18px',
+    //     },
+    //   },
+    //   [
+    //     h('.menu-icon.red-dot'),
+    //     'Ropsten Test Network',
+    //     providerType === 'ropsten' ? h('.check', '✓') : null,
+    //   ]
+    // ),
 
-    h(
-      DropdownMenuItem,
-      {
-        key: 'kovan',
-        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-        onClick: () => props.dispatch(actions.setProviderType('kovan')),
-        style: {
-          fontSize: '18px',
-        },
-      },
-      [
-        h('.menu-icon.hollow-diamond'),
-        'Kovan Test Network',
-        providerType === 'kovan' ? h('.check', '✓') : null,
-      ]
-    ),
+    // h(
+    //   DropdownMenuItem,
+    //   {
+    //     key: 'kovan',
+    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+    //     onClick: () => props.dispatch(actions.setProviderType('kovan')),
+    //     style: {
+    //       fontSize: '18px',
+    //     },
+    //   },
+    //   [
+    //     h('.menu-icon.hollow-diamond'),
+    //     'Kovan Test Network',
+    //     providerType === 'kovan' ? h('.check', '✓') : null,
+    //   ]
+    // ),
 
-    h(
-      DropdownMenuItem,
-      {
-        key: 'rinkeby',
-        closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
-        onClick: () => props.dispatch(actions.setProviderType('rinkeby')),
-        style: {
-          fontSize: '18px',
-        },
-      },
-      [
-        h('.menu-icon.golden-square'),
-        'Rinkeby Test Network',
-        providerType === 'rinkeby' ? h('.check', '✓') : null,
-      ]
-    ),
+    // h(
+    //   DropdownMenuItem,
+    //   {
+    //     key: 'rinkeby',
+    //     closeMenu: () => this.setState({ isNetworkMenuOpen: !isOpen }),
+    //     onClick: () => props.dispatch(actions.setProviderType('rinkeby')),
+    //     style: {
+    //       fontSize: '18px',
+    //     },
+    //   },
+    //   [
+    //     h('.menu-icon.golden-square'),
+    //     'Rinkeby Test Network',
+    //     providerType === 'rinkeby' ? h('.check', '✓') : null,
+    //   ]
+    // ),
 
     h(
       DropdownMenuItem,
@@ -336,8 +336,8 @@ App.prototype.renderNetworkDropdown = function () {
       },
       [
         h('i.fa.fa-question-circle.fa-lg.menu-icon'),
-        'Localhost 8545',
-        activeNetwork === 'http://localhost:8545' ? h('.check', '✓') : null,
+        'Localhost 8293',
+        activeNetwork === 'http://localhost:8293' ? h('.check', '✓') : null,
       ]
     ),
 
@@ -640,7 +640,7 @@ App.prototype.renderCustomOption = function (provider) {
 
   switch (rpcTarget) {
 
-    case 'http://localhost:8545':
+    case 'http://localhost:8293':
       return null
 
     default:
@@ -668,12 +668,12 @@ App.prototype.getNetworkName = function () {
 
   if (providerName === 'mainnet') {
     name = 'Main Ethereum Network'
-  } else if (providerName === 'ropsten') {
-    name = 'Ropsten Test Network'
-  } else if (providerName === 'kovan') {
-    name = 'Kovan Test Network'
-  } else if (providerName === 'rinkeby') {
-    name = 'Rinkeby Test Network'
+  // } else if (providerName === 'ropsten') {
+  //   name = 'Ropsten Test Network'
+  // } else if (providerName === 'kovan') {
+  //   name = 'Kovan Test Network'
+  // } else if (providerName === 'rinkeby') {
+  //   name = 'Rinkeby Test Network'
   } else {
     name = 'Unknown Private Network'
   }
@@ -686,7 +686,7 @@ App.prototype.renderCommonRpc = function (rpcList, provider) {
   const rpcTarget = provider.rpcTarget
 
   return rpcList.map((rpc) => {
-    if ((rpc === 'http://localhost:8545') || (rpc === rpcTarget)) {
+    if ((rpc === 'http://localhost:8293') || (rpc === rpcTarget)) {
       return null
     } else {
       return h(

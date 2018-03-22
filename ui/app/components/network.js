@@ -87,35 +87,33 @@ Network.prototype.render = function () {
               h('.network-name', 'Main Network'),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
-            /*
-          case 'ropsten-test-network':
-            return h('.network-indicator', [
-              h(NetworkDropdownIcon, {
-                backgroundColor: '#e91550', // $crimson
-                nonSelectBackgroundColor: '#ec2c50',
-              }),
-              h('.network-name', 'Ropsten Test Net'),
-              h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-            ])
-          case 'kovan-test-network':
-            return h('.network-indicator', [
-              h(NetworkDropdownIcon, {
-                backgroundColor: '#690496', // $purple
-                nonSelectBackgroundColor: '#b039f3',
-              }),
-              h('.network-name', 'Kovan Test Net'),
-              h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-            ])
-          case 'rinkeby-test-network':
-            return h('.network-indicator', [
-              h(NetworkDropdownIcon, {
-                backgroundColor: '#ebb33f', // $tulip-tree
-                nonSelectBackgroundColor: '#ecb23e',
-              }),
-              h('.network-name', 'Rinkeby Test Net'),
-              h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-            ])
-            */
+          // case 'ropsten-test-network':
+          //   return h('.network-indicator', [
+          //     h(NetworkDropdownIcon, {
+          //       backgroundColor: '#e91550', // $crimson
+          //       nonSelectBackgroundColor: '#ec2c50',
+          //     }),
+          //     h('.network-name', 'Ropsten Test Net'),
+          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
+          //   ])
+          // case 'kovan-test-network':
+          //   return h('.network-indicator', [
+          //     h(NetworkDropdownIcon, {
+          //       backgroundColor: '#690496', // $purple
+          //       nonSelectBackgroundColor: '#b039f3',
+          //     }),
+          //     h('.network-name', 'Kovan Test Net'),
+          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
+          //   ])
+          // case 'rinkeby-test-network':
+          //   return h('.network-indicator', [
+          //     h(NetworkDropdownIcon, {
+          //       backgroundColor: '#ebb33f', // $tulip-tree
+          //       nonSelectBackgroundColor: '#ecb23e',
+          //     }),
+          //     h('.network-name', 'Rinkeby Test Net'),
+          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
+          //   ])
           default:
             return h('.network-indicator', [
               h('i.fa.fa-question-circle.fa-lg', {

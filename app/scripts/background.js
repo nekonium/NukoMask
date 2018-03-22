@@ -19,7 +19,7 @@ const setupMetamaskMeshMetrics = require('./lib/setupMetamaskMeshMetrics')
 const EdgeEncryptor = require('./edge-encryptor')
 
 
-const STORAGE_KEY = 'metamask-config'
+const STORAGE_KEY = 'nukojaext-config'
 const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
 
 window.log = log
@@ -54,7 +54,7 @@ setupMetamaskMeshMetrics()
 async function initialize () {
   const initState = await loadStateFromPersistence()
   await setupController(initState)
-  log.debug('MetaMask initialization complete.')
+  log.debug('NukojaExtension initialization complete.')
 }
 
 //

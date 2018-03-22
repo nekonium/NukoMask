@@ -1,17 +1,15 @@
 const MAINET_RPC_URL = 'http://52.77.216.165:8293'
-/*
-const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
-
-const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
-const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
-*/
+// const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
+// const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
+// const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
 const LOCALHOST_RPC_URL = 'http://localhost:8293'
-const MAINET_RPC_URL_BETA = 'https://mainnet.infura.io/metamask2'
-const ROPSTEN_RPC_URL_BETA = 'https://ropsten.infura.io/metamask2'
-const KOVAN_RPC_URL_BETA = 'https://kovan.infura.io/metamask2'
-const RINKEBY_RPC_URL_BETA = 'https://rinkeby.infura.io/metamask2'
 
-const DEFAULT_RPC = 'rinkeby'
+const MAINET_RPC_URL_BETA = 'http://52.77.216.165:8293'
+// const ROPSTEN_RPC_URL_BETA = 'https://ropsten.infura.io/metamask2'
+// const KOVAN_RPC_URL_BETA = 'https://kovan.infura.io/metamask2'
+// const RINKEBY_RPC_URL_BETA = 'https://rinkeby.infura.io/metamask2'
+
+const DEFAULT_RPC = 'mainnet'
 const OLD_UI_NETWORK_TYPE = 'network'
 const BETA_UI_NETWORK_TYPE = 'networkBeta'
 
