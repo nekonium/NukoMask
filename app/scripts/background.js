@@ -19,7 +19,7 @@ const setupMetamaskMeshMetrics = require('./lib/setupMetamaskMeshMetrics')
 const EdgeEncryptor = require('./edge-encryptor')
 
 
-const STORAGE_KEY = 'nukojaext-config'
+const STORAGE_KEY = 'nukomask-config'
 const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
 
 window.log = log
@@ -123,6 +123,7 @@ function setupController (initState) {
     if (isMetaMaskInternalProcess) {
       // communication with popup
       popupIsOpen = popupIsOpen || (remotePort.name === 'popup')
+      // @whatis
       controller.setupTrustedCommunication(portStream, 'MetaMask')
       // record popup as closed
       if (remotePort.sender.url.match(/home.html$/)) {

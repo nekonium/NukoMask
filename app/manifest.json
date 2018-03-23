@@ -1,6 +1,6 @@
 {
-  "name": "Nukoja",
-  "short_name": "Nukoja",
+  "name": "NukoMask(MetaMask Nekonium edition)",
+  "short_name": "NukoMask",
   "version": "1.0.0",
   "manifest_version": 2,
   "author": "https://nekonium.network",
@@ -37,7 +37,7 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "Nukoja",
+    "default_title": "NukoMask",
     "default_popup": "popup.html"
   },
   "content_scripts": [

@@ -56,7 +56,7 @@ class CurrencyController {
       this.setConversionDate(Number(parsedResponse[0].last_updated))
     }).catch((err) => {
       if (err) {
-        console.warn('MetaMask - Failed to query currency conversion.')
+        console.warn('NukoMask - Failed to query currency conversion.')
         this.setConversionRate(0)
         this.setConversionDate('N/A')
       }

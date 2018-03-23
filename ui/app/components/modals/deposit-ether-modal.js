@@ -14,7 +14,7 @@ const COINBASE_ROW_TEXT = `Coinbase is the world’s most popular way to buy and
 ethereum, and litecoin.`
 const SHAPESHIFT_ROW_TITLE = 'Deposit with ShapeShift'
 const SHAPESHIFT_ROW_TEXT = `If you own other cryptocurrencies, you can trade and deposit Ether
-directly into your MetaMask wallet. No Account Needed.`
+directly into your NukoMask wallet. No Account Needed.`
 const FAUCET_ROW_TITLE = 'Test Faucet'
 const facuetRowText = networkName => `Get Ether from a faucet for the ${networkName}`
 

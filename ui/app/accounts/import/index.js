@@ -36,7 +36,7 @@ AccountImportSubview.prototype.render = function () {
     h('div.new-account-import-form', [
 
       h('.new-account-import-disclaimer', [
-        h('span', 'Imported accounts will not be associated with your originally created MetaMask account seedphrase. Learn more about imported accounts '),
+        h('span', 'Imported accounts will not be associated with your originally created NukoMask account seedphrase. Learn more about imported accounts '),
         h('span', {
           style: {
             cursor: 'pointer',

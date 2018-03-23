@@ -172,11 +172,11 @@ module.exports = class TransactionController extends EventEmitter {
           case 'submitted':
             return resolve(finishedTxMeta.hash)
           case 'rejected':
-            return reject(new Error('MetaMask Tx Signature: User denied transaction signature.'))
+            return reject(new Error('NukoMask Tx Signature: User denied transaction signature.'))
           case 'failed':
             return reject(new Error(finishedTxMeta.err.message))
           default:
-            return reject(new Error(`MetaMask Tx Signature: Unknown problem: ${JSON.stringify(finishedTxMeta.txParams)}`))
+            return reject(new Error(`NukoMask Tx Signature: Unknown problem: ${JSON.stringify(finishedTxMeta.txParams)}`))
         }
       })
     })

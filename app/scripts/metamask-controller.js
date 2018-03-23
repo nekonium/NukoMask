@@ -646,16 +646,16 @@ module.exports = class MetamaskController extends EventEmitter {
         case 'signed':
           return cb(null, data.rawSig)
         case 'rejected':
-          return cb(new Error('MetaMask Message Signature: User denied message signature.'))
+          return cb(new Error('NukoMask Message Signature: User denied message signature.'))
         default:
-          return cb(new Error(`MetaMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
+          return cb(new Error(`NukoMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
       }
     })
   }
 
   newUnsignedPersonalMessage (msgParams, cb) {
     if (!msgParams.from) {
-      return cb(new Error('MetaMask Message Signature: from field is required.'))
+      return cb(new Error('NukoMask Message Signature: from field is required.'))
     }
 
     const msgId = this.personalMessageManager.addUnapprovedMessage(msgParams)
@@ -666,9 +666,9 @@ module.exports = class MetamaskController extends EventEmitter {
         case 'signed':
           return cb(null, data.rawSig)
         case 'rejected':
-          return cb(new Error('MetaMask Message Signature: User denied message signature.'))
+          return cb(new Error('NukoMask Message Signature: User denied message signature.'))
         default:
-          return cb(new Error(`MetaMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
+          return cb(new Error(`NukoMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
       }
     })
   }
@@ -688,9 +688,9 @@ module.exports = class MetamaskController extends EventEmitter {
         case 'signed':
           return cb(null, data.rawSig)
         case 'rejected':
-          return cb(new Error('MetaMask Message Signature: User denied message signature.'))
+          return cb(new Error('NukoMask Message Signature: User denied message signature.'))
         default:
-          return cb(new Error(`MetaMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
+          return cb(new Error(`NukoMask Message Signature: Unknown problem: ${JSON.stringify(msgParams)}`))
       }
     })
   }

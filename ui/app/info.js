@@ -46,7 +46,7 @@ InfoScreen.prototype.render = function () {
           // current version number
 
           h('.info.info-gray', [
-            h('div', 'Nukoja'),
+            h('div', 'NukoMask'),
             h('div', `Version: ${version} `),
             h('div', {
               style: {
@@ -66,7 +66,7 @@ InfoScreen.prototype.render = function () {
                   target: '_blank',
                   onClick (event) { this.navigateTo(event.target.href) },
                 }, [
-                  h('div.info', 'Nuko project'),
+                  h('div.info', 'Nekonium project'),
                 ]),
               ]),
 

@@ -19,18 +19,18 @@ module.exports = {
   network: {
     localhost: LOCALHOST_RPC_URL,
     mainnet: MAINET_RPC_URL,
-/*    ropsten: ROPSTEN_RPC_URL,
-    kovan: KOVAN_RPC_URL,
-    rinkeby: RINKEBY_RPC_URL,
-    */
+    // ropsten: ROPSTEN_RPC_URL,
+    // kovan: KOVAN_RPC_URL,
+    // rinkeby: RINKEBY_RPC_URL,
+  
   },
   // Used for beta UI
   networkBeta: {
     localhost: LOCALHOST_RPC_URL,
     mainnet: MAINET_RPC_URL_BETA,
-/*    ropsten: ROPSTEN_RPC_URL_BETA,
-    kovan: KOVAN_RPC_URL_BETA,
-    rinkeby: RINKEBY_RPC_URL_BETA,*/
+    // ropsten: ROPSTEN_RPC_URL_BETA,
+    // kovan: KOVAN_RPC_URL_BETA,
+    // rinkeby: RINKEBY_RPC_URL_BETA,
   },
   networkNames: {
     3: 'Ropsten',

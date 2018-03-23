@@ -55,7 +55,7 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
           color: '#7F8082',
           marginBottom: 10,
         },
-      }, 'MetaMask'),
+      }, 'NukoMask '),
 
 
       h('div', [
@@ -68,7 +68,7 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
         }, 'Encrypt your new DEN'),
 
         h(Tooltip, {
-          title: 'Your DEN is your password-encrypted storage within MetaMask.',
+          title: 'Your DEN is your password-encrypted storage within NukoMask.',
         }, [
           h('i.fa.fa-question-circle.pointer', {
             style: {
