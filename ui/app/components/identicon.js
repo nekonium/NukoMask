@@ -47,11 +47,11 @@ IdenticonComponent.prototype.render = function () {
     )
     : (
       h('img.balance-icon', {
-        src: '../images/eth_logo.svg',
+        src: '../images/3_64.png',
         style: {
           height: diameter,
           width: diameter,
-          borderRadius: diameter / 2,
+//          borderRadius: diameter / 2,
         },
       })
     )

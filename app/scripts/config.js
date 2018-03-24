@@ -33,9 +33,10 @@ module.exports = {
     // rinkeby: RINKEBY_RPC_URL_BETA,
   },
   networkNames: {
-    3: 'Ropsten',
-    4: 'Rinkeby',
-    42: 'Kovan',
+    1: 'MainNet',
+    // 3: 'Ropsten',
+    // 4: 'Rinkeby',
+    // 42: 'Kovan',
   },
   enums: {
     DEFAULT_RPC,

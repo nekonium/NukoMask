@@ -15,7 +15,7 @@ GasFeeDisplay.prototype.render = function () {
     conversionRate,
     gasTotal,
     onClick,
-    primaryCurrency = 'ETH',
+    primaryCurrency = 'NUKO',
     convertedCurrency,
   } = this.props
 

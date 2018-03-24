@@ -33,12 +33,20 @@ UnlockScreen.prototype.render = function () {
     }, [
       h('.unlock-screen.flex-column.flex-center.flex-grow', [
 
-        h(Mascot, {
-          animationEventEmitter: this.animationEventEmitter,
-        }),
+        // h(Mascot, {
+        //   animationEventEmitter: this.animationEventEmitter,
 
+        // }),
+        h('img', {
+          style: {
+            width: '180px',
+          },
+          src: "/images/nukoja_green.png",
+        }, ),
+  
         h('h1', {
           style: {
+            marginTop:'1em',
             fontSize: '1.4em',
             textTransform: 'uppercase',
             color: '#7F8082',
