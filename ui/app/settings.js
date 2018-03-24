@@ -102,27 +102,27 @@ class Settings extends Component {
 
       case 'mainnet':
         title = 'Current Network'
-        value = 'Main Ethereum Network'
+        value = 'Main Nekonium Network'
         color = '#038789'
         break
 
-      case 'ropsten':
-        title = 'Current Network'
-        value = 'Ropsten Test Network'
-        color = '#e91550'
-        break
+      // case 'ropsten':
+      //   title = 'Current Network'
+      //   value = 'Ropsten Test Network'
+      //   color = '#e91550'
+      //   break
 
-      case 'kovan':
-        title = 'Current Network'
-        value = 'Kovan Test Network'
-        color = '#690496'
-        break
+      // case 'kovan':
+      //   title = 'Current Network'
+      //   value = 'Kovan Test Network'
+      //   color = '#690496'
+      //   break
 
-      case 'rinkeby':
-        title = 'Current Network'
-        value = 'Rinkeby Test Network'
-        color = '#ebb33f'
-        break
+      // case 'rinkeby':
+      //   title = 'Current Network'
+      //   value = 'Rinkeby Test Network'
+      //   color = '#ebb33f'
+      //   break
 
       default:
         title = 'Current RPC'
@@ -366,13 +366,13 @@ class Settings extends Component {
           h('div.settings__content-item.settings__content-item--without-height', [
             this.renderLogo(),
             h('div.settings__info-item', [
-              h('div.settings__info-version-header', 'MetaMask Version'),
+              h('div.settings__info-version-header', 'NukoMask Version'),
               h('div.settings__info-version-number', `${version}`),
             ]),
             h('div.settings__info-item', [
               h(
                 'div.settings__info-about',
-                'MetaMask is designed and built in California.'
+                'NukoMask is forked from MetaMask.\nMetaMask is designed and built in California.'
               ),
             ]),
           ]),

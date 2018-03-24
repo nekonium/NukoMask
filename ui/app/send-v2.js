@@ -180,13 +180,13 @@ SendTransactionScreen.prototype.componentDidUpdate = function (prevProps) {
 
 SendTransactionScreen.prototype.renderHeader = function () {
   const { selectedToken, clearSend, goHome } = this.props
-  const tokenText = selectedToken ? 'tokens' : 'ETH'
+  const tokenText = selectedToken ? 'tokens' : 'NUKO'
 
   return h('div.page-container__header', [
 
-    h('div.page-container__title', selectedToken ? 'Send Tokens' : 'Send ETH'),
+    h('div.page-container__title', selectedToken ? 'Send Tokens' : 'Send NUKO'),
 
-    h('div.page-container__subtitle', `Only send ${tokenText} to an Ethereum address.`),
+    h('div.page-container__subtitle', `Only send ${tokenText} to an Nekonium address.`),
 
     h('div.page-container__header-close', {
       onClick: () => {
@@ -381,7 +381,7 @@ SendTransactionScreen.prototype.validateAmount = function (value) {
   } else if (verifyTokenBalance && !sufficientTokens) {
     amountError = 'Insufficient tokens.'
   } else if (amountLessThanZero) {
-    amountError = 'Can not send negative amounts of ETH.'
+    amountError = 'Can not send negative amounts of NUKO.'
   }
 
   updateSendErrors({ amount: amountError })
@@ -390,7 +390,7 @@ SendTransactionScreen.prototype.validateAmount = function (value) {
 SendTransactionScreen.prototype.renderAmountRow = function () {
   const {
     selectedToken,
-    primaryCurrency = 'ETH',
+    primaryCurrency = 'NUKO',
     convertedCurrency,
     amountConversionRate,
     errors,

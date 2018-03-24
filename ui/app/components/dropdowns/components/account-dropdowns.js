@@ -302,7 +302,7 @@ class AccountDropdowns extends Component {
               menuItemStyles,
             ),
           },
-          'View account on Etherscan',
+          'View account on nekonium.network',
         ),
         h(
           DropdownMenuItem,

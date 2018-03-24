@@ -284,12 +284,12 @@ App.prototype.renderAppBar = function () {
             h('img.metafox-icon', {
               height: 42,
               width: 42,
-              src: '/images/metamask-fox.svg',
+              src: '/images/nukoja_green.png',
             }),
 
             // metamask name
             h('.flex-row', [
-              h('h1', 'MetaMask'),
+              h('h1', 'NukoMask'),
               h('div.beta-label', 'BETA'),
             ]),
           ]),
@@ -539,7 +539,7 @@ App.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = 'Main Ethereum Network'
+    name = 'Main Nekonium Network'
   }/* else if (providerName === 'ropsten') {
     name = 'Ropsten Test Network'
   } else if (providerName === 'kovan') {

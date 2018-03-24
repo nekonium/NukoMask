@@ -338,7 +338,7 @@ AddTokenScreen.prototype.render = function () {
       h('div.add-token__wrapper', [
         h('div.add-token__title-container', [
           h('div.add-token__title', 'Add Token'),
-          h('div.add-token__description', 'Keep track of the tokens you’ve bought with your MetaMask account. If you bought tokens using a different account, those tokens will not appear here.'),
+          h('div.add-token__description', 'Keep track of the tokens you’ve bought with your NukoMask account. If you bought tokens using a different account, those tokens will not appear here.'),
           h('div.add-token__description', 'Search for tokens or select from our list of popular tokens.'),
         ]),
         h('div.add-token__content-container', [

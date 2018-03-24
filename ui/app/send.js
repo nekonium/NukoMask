@@ -347,7 +347,7 @@
 //       // Main Send token Card
 //       h('div.send-screen-card', [
 
-//         h('img.send-eth-icon', { src: '../images/eth_logo.svg' }),
+//         h('img.send-eth-icon', { src: '../images/3_64.png' }),
 
 //         h('div.send-screen__title', 'Send'),
 
@@ -435,7 +435,7 @@
 //   }
 
 //   if (amountLessThanZero) {
-//     errors.amount = 'Can not send negative amounts of ETH.'
+//     errors.amount = 'Can not send negative amounts of NUKO.'
 //   }
 
 //   if (!from) {
