@@ -99,7 +99,7 @@ TxListItem.prototype.getSendEtherTotal = function () {
   })
 
   return {
-    total: `${totalInETH} ETH`,
+    total: `${totalInETH} NUKO`,
     fiatTotal: `${totalInFiat} ${currentCurrency.toUpperCase()}`,
   }
 }
