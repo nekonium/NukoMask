@@ -10,7 +10,8 @@ const EthQuery = require('eth-query')
 const createEventEmitterProxy = require('../lib/events-proxy.js')
 const networkConfig = require('../config.js')
 const { OLD_UI_NETWORK_TYPE, DEFAULT_RPC } = networkConfig.enums
-const INFURA_PROVIDER_TYPES = ['ropsten', 'rinkeby', 'kovan', 'mainnet']
+//const INFURA_PROVIDER_TYPES = ['ropsten', 'rinkeby', 'kovan', 'mainnet']
+const INFURA_PROVIDER_TYPES = []
 
 module.exports = class NetworkController extends EventEmitter {
 
