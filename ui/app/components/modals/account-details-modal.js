@@ -5,7 +5,7 @@ const connect = require('react-redux').connect
 const actions = require('../../actions')
 const AccountModalContainer = require('./account-modal-container')
 const { getSelectedIdentity } = require('../../selectors')
-const genAccountLink = require('../../../lib/account-link.js')
+const genAccountLink = require('../../../lib/account-link')
 const QrView = require('../qr-code')
 const EditableLabel = require('../editable-label')
 

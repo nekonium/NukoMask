@@ -5,7 +5,7 @@ const connect = require('react-redux').connect
 
 const EthBalance = require('./eth-balance')
 const addressSummary = require('../util').addressSummary
-const explorerLink = require('etherscan-link').createExplorerLink
+const explorerLink = require('../../lib/explorer-link')
 const CopyButton = require('./copyButton')
 const vreme = new (require('vreme'))()
 const Tooltip = require('./tooltip')
@@ -67,8 +67,7 @@ TransactionListItem.prototype.render = function () {
         }
         event.stopPropagation()
         if (!transaction.hash || !isLinkable) return
-        //var url = explorerLink(transaction.hash, parseInt(network))
-        var url = "http://nekonium.network/tx/" + transaction.hash
+        var url = explorerLink(transaction.hash, parseInt(network))
         global.platform.openWindow({ url })
       },
       style: {

@@ -40,8 +40,8 @@ TokenList.prototype.render = function () {
         },
         onClick: () => {
           global.platform.openWindow({
-          url: `https://ethplorer.io/address/${userAddress}`,
-        })
+            url: `https://ethplorer.io/address/${userAddress}`,
+          })
         },
       }, 'here'),
     ])

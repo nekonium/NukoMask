@@ -295,7 +295,8 @@ class Settings extends Component {
   renderLogo () {
     return (
       h('div.settings__info-logo-wrapper', [
-        h('img.settings__info-logo', { src: 'images/info-logo.png' }),
+        h('img.settings__info-logo', { src: 'images/icon-64.png' }),
+//        h('img.settings__info-logo', { src: 'images/info-logo.png' }),
       ])
     )
   }
@@ -306,53 +307,29 @@ class Settings extends Component {
         h('div.settings__info-link-header', 'Links'),
         h('div.settings__info-link-item', [
           h('a', {
-            href: 'https://metamask.io/privacy.html',
+            href: 'https://nekonium.github.io/',
             target: '_blank',
           }, [
-            h('span.settings__info-link', 'Privacy Policy'),
+            h('span.settings__info-link', 'Nekonium project'),
           ]),
         ]),
         h('div.settings__info-link-item', [
           h('a', {
-            href: 'https://metamask.io/terms.html',
+            href: 'https://github.com/nekonium/NukoMask',
             target: '_blank',
           }, [
-            h('span.settings__info-link', 'Terms of Use'),
-          ]),
-        ]),
-        h('div.settings__info-link-item', [
-          h('a', {
-            href: 'https://metamask.io/attributions.html',
-            target: '_blank',
-          }, [
-            h('span.settings__info-link', 'Attributions'),
+            h('span.settings__info-link', 'Github'),
           ]),
         ]),
         h('hr.settings__info-separator'),
         h('div.settings__info-link-item', [
           h('a', {
-            href: 'https://support.metamask.io',
-            target: '_blank',
-          }, [
-            h('span.settings__info-link', 'Visit our Support Center'),
-          ]),
-        ]),
-        h('div.settings__info-link-item', [
-          h('a', {
             href: 'https://metamask.io/',
             target: '_blank',
           }, [
-            h('span.settings__info-link', 'Visit our web site'),
+            h('span.settings__info-link', 'MetaMask Website'),
           ]),
-        ]),
-        h('div.settings__info-link-item', [
-          h('a', {
-            target: '_blank',
-            href: 'mailto:help@metamask.io?subject=Feedback',
-          }, [
-            h('span.settings__info-link', 'Email us!'),
-          ]),
-        ]),
+        ]),        
       ])
     )
   }
@@ -372,7 +349,16 @@ class Settings extends Component {
             h('div.settings__info-item', [
               h(
                 'div.settings__info-about',
-                'NukoMask is forked from MetaMask.\nMetaMask is designed and built in California.'
+                'NukoMask is forked from MetaMask.\nNukoMask provides Nekonium with equivalent functionality to MetaMask.',
+              ),
+            ]),
+            h('div.settings__info-item', [
+              h('div.settings__info-version-header', 'MetaMask'),
+            ]),
+            h('div.settings__info-item', [
+              h(
+                'div.settings__info-about',
+                'MetaMask is designed and built in California.\nThis is a bridge that allows you to visit the distributed web in your browser. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.',
               ),
             ]),
           ]),

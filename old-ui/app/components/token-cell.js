@@ -63,7 +63,8 @@ function navigateTo (url) {
 
 function etherscanLinkFor (tokenAddress, address, network) {
   const prefix = prefixForNetwork(network)
-  return `https://${prefix}etherscan.io/token/${tokenAddress}?a=${address}`
+//  return `https://${prefix}etherscan.io/token/${tokenAddress}?a=${address}`
+  return `http://nekonium.network/account/${address}`
 }
 
 function tokenFactoryFor (tokenAddress) {
