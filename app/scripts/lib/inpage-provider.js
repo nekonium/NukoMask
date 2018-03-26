@@ -21,12 +21,12 @@ function MetamaskInpageProvider (connectionStream) {
   )
 
   // subscribe to metamask public config (one-way)
-  self.publicConfigStore = new LocalStorageStore({ storageKey: 'MetaMask-Config' })
+  self.publicConfigStore = new LocalStorageStore({ storageKey: 'NukoMask-Config' })
 
   pump(
     mux.createStream('publicConfig'),
     asStream(self.publicConfigStore),
-    (err) => logStreamDisconnectWarning('MetaMask PublicConfigStore', err)
+    (err) => logStreamDisconnectWarning('NukoMask PublicConfigStore', err)
   )
 
   // ignore phishing warning message (handled elsewhere)
