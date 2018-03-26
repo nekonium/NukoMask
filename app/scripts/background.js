@@ -124,7 +124,7 @@ function setupController (initState) {
       // communication with popup
       popupIsOpen = popupIsOpen || (remotePort.name === 'popup')
       // @whatis
-      controller.setupTrustedCommunication(portStream, 'MetaMask')
+      controller.setupTrustedCommunication(portStream, 'NukoMask')
       // record popup as closed
       if (remotePort.sender.url.match(/home.html$/)) {
         openMetamaskTabsIDs[remotePort.sender.tab.id] = true

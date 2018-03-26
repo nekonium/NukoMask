@@ -102,7 +102,8 @@ async function setupController (initState, client) {
     var isMetaMaskInternalProcess = (context === 'popup')
     if (isMetaMaskInternalProcess) {
       // communication with popup
-      controller.setupTrustedCommunication(connectionStream, 'MetaMask')
+      //@whatis
+      controller.setupTrustedCommunication(connectionStream, 'NukoMask')
       global.metamaskPopupIsOpen = true
     } else {
       // communication with page

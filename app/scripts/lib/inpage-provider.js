@@ -17,7 +17,7 @@ function MetamaskInpageProvider (connectionStream) {
     connectionStream,
     mux,
     connectionStream,
-    (err) => logStreamDisconnectWarning('MetaMask', err)
+    (err) => logStreamDisconnectWarning('NukoMask', err)
   )
 
   // subscribe to metamask public config (one-way)

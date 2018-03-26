@@ -46,7 +46,7 @@ async function runFirstTimeUsageTest(assert, done) {
 
   // Scroll through terms
   const title = app.find('h1')[0]
-  assert.equal(title.textContent, 'MetaMask', 'title screen')
+  assert.equal(title.textContent, 'NukoMask', 'title screen')
 
   // enter password
   const pwBox = app.find('#password-box')[0]
