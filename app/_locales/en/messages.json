@@ -30,7 +30,7 @@
     "message": "Amount + Gas"
   },
   "appDescription": {
-    "message": "Ethereum Browser Extension",
+    "message": "Nekonium Browser Extension(MetaMask Nekonium edition)",
     "description": "The description of the application"
   },
   "appName": {
@@ -75,7 +75,7 @@
     "message": "Borrow With Dharma (Beta)"
   },
   "builtInCalifornia": {
-    "message": "MetaMask is designed and built in California."
+    "message": "NukoMask is forked from MetaMask.\nNukoMask provides Nekonium with equivalent functionality to MetaMask."
   },
   "buy": {
     "message": "Buy"
@@ -184,7 +184,7 @@
     "message": "Decimals of Precision"
   }, 
   "defaultNetwork": {
-    "message": "The default network for Ether transactions is Main Net."
+    "message": "The default network for Nekonium transactions is Main Net."
   },
   "denExplainer": {
     "message": "Your DEN is your password-encrypted storage within MetaMask."
@@ -200,10 +200,10 @@
     "description": "Tells the user what coin they have selected to deposit with shapeshift"
   },
   "depositEth": {
-    "message": "Deposit Eth"
+    "message": "Deposit Nuko"
   },
   "depositEther": {
-    "message": "Deposit Ether"
+    "message": "Deposit Nekonium"
   },
   "depositFiat": {
     "message": "Deposit with Fiat"
@@ -215,7 +215,7 @@
     "message": "Deposit with ShapeShift"
   },
   "depositShapeShiftExplainer": {
-    "message": "If you own other cryptocurrencies, you can trade and deposit Ether directly into your MetaMask wallet. No Account Needed."
+    "message": "If you own other cryptocurrencies, you can trade and deposit Nekonium directly into your MetaMask wallet. No Account Needed."
   },
   "details": {
     "message": "Details"
@@ -224,10 +224,10 @@
     "message": "Direct Deposit"
   },
   "directDepositEther": {
-    "message": "Directly Deposit Ether"
+    "message": "Directly Deposit Nuko"
   },
   "directDepositEtherExplainer": {
-    "message": "If you already have some Ether, the quickest way to get Ether in your new wallet by direct deposit."
+    "message": "If you already have some Nuko, the quickest way to get Nuko in your new wallet by direct deposit."
   },
   "done": {
     "message": "Done"
@@ -263,7 +263,7 @@
     "message": "Passwords Don't Match"
   },
   "etherscanView": {
-    "message": "View account on Etherscan"
+    "message": "View account on BlockExplorer"
   },
   "exchangeRate": {
     "message": "Exchange Rate"
@@ -329,11 +329,11 @@
     "message": "Gas Price Required"
   },
   "getEther": {
-    "message": "Get Ether"
+    "message": "Get Nekonium"
   },
   "getEtherFromFaucet": {
-    "message": "Get Ether from a faucet for the $1",
-    "description": "Displays network name for Ether faucet"
+    "message": "Get Nekonium from a faucet for the $1",
+    "description": "Displays network name for Nuko faucet"
   },
   "greaterThanMin": {
     "message": "must be greater than or equal to $1.",
@@ -359,7 +359,7 @@
     "message": "How would you like to deposit Ether?"
   },
   "holdEther": {
-    "message": "It allows you to hold ether & tokens, and serves as your bridge to decentralized applications."
+    "message": "It allows you to hold nuko & tokens, and serves as your bridge to decentralized applications."
   },
   "import": {
     "message": "Import",
@@ -444,7 +444,7 @@
     "message": "Loading Tokens..."
   },
   "localhost": {
-    "message": "Localhost 8545"
+    "message": "Localhost 8293"
   },
   "login": {
     "message": "Log In"
@@ -459,13 +459,13 @@
     "message": "seed words only have lowercase characters"
   },
   "mainnet": {
-    "message": "Main Ethereum Network"
+    "message": "Main Nekonium Network"
   },
   "message": {
     "message": "Message"
   },
   "metamaskDescription": {
-    "message": "MetaMask is a secure identity vault for Ethereum."
+    "message": "NukoMask is a secure identity vault for Nekonium."
   },
   "min": {
     "message": "Minimum"
@@ -477,7 +477,7 @@
     "message": "Must select at least 1 token."
   },
   "needEtherInWallet": {
-    "message": "To interact with decentralized applications using MetaMask, you’ll need Ether in your wallet."
+    "message": "To interact with decentralized applications using MetaMask, you’ll need Nuko in your wallet."
   },
   "needImportFile": {
     "message": "You must select a file to import.",
@@ -638,7 +638,7 @@
     "message": "Current RPC"
   },
   "connectingToMainnet": {
-    "message": "Connecting to Main Ethereum Network"
+    "message": "Connecting to Main Nekonium Network"
   },
   "connectingToRopsten": {
     "message": "Connecting to Ropsten Test Network"
@@ -694,16 +694,16 @@
     "message": "Send"
   },
   "sendETH": {
-    "message": "Send ETH"
+    "message": "Send NUKO"
   },
   "sendTokens": {
     "message": "Send Tokens"
   },
   "onlySendToEtherAddress": {
-    "message": "Only send ETH to an Ethereum address."
+    "message": "Only send NUKO to an Nekonium address."
   },
   "sendTokensAnywhere": {
-    "message": "Send Tokens to anyone with an Ethereum account"
+    "message": "Send Tokens to anyone with an Nekonium account"
   },
   "settings": {
     "message": "Settings"
@@ -874,7 +874,7 @@
     "message": "Warning"
   },
   "welcomeBeta": {
-    "message": "Welcome to MetaMask Beta"
+    "message": "Welcome to NukoMask Beta"
   },
   "whatsThis": {
     "message": "What's this?"
