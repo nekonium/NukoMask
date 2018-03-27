@@ -33,8 +33,8 @@ window.nukomask={
   const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
   log.setDefaultLevel(METAMASK_DEBUG ? 'debug' : 'warn')
   
-  console.log('NukoMask - oldWeb3:'+old_Web3)
-  console.log('NukoMask - newWeb3:'+new_Web3)
+//  console.log('NukoMask - oldWeb3:'+old_Web3)
+//  console.log('NukoMask - newWeb3:'+new_Web3)
 
   
   //
