@@ -21,17 +21,17 @@
     "message": "トークンを追加"
   },
   "amount": {
-    "message": "金額"
+    "message": "総額"
   },
   "amountPlusGas": {
-    "message": "金額 + ガス"
+    "message": "総額 + ガス"
   },
   "appDescription": {
-    "message": "Ethereumのブラウザ・エクステンション",
+    "message": "Nekoniumのブラウザ・エクステンション",
     "description": "The description of the application"
   },
   "appName": {
-    "message": "MetaMask",
+    "message": "NukoMask",
     "description": "The name of the application"
   },
   "attemptingConnect": {
@@ -148,7 +148,7 @@
     "message": "小数点桁数"
   }, 
   "defaultNetwork": {
-    "message": "デフォルトのEther送受信ネットワークはメインネットです。"
+    "message": "デフォルトのNekonium送受信ネットワークはメインネットです。"
   },
   "denExplainer": {
     "message": "DENとは、あなたのパスワードが暗号化されたMetaMask内のストレージです。"
@@ -164,10 +164,10 @@
     "description": "Tells the user what coin they have selected to deposit with shapeshift"
   },
   "depositEth": {
-    "message": "ETHをデポジット"
+    "message": "NUKOをデポジット"
   },
   "depositEther": {
-    "message": "Etherをデポジット"
+    "message": "Nukoをデポジット"
   },
   "depositFiat": {
     "message": "法定通貨でデポジット"
@@ -179,7 +179,7 @@
     "message": "ShapeShiftで入金"
   },
   "depositShapeShiftExplainer": {
-    "message": "他の暗号通貨をEtherと交換してMetaMaskのウォレットへ入金できます。アカウント作成は不要です。"
+    "message": "他の暗号通貨をNukoと交換してNukoMaskのウォレットへ入金できます。アカウント作成は不要です。"
   },
   "details": {
     "message": "詳細"
@@ -188,10 +188,10 @@
     "message": "ダイレクトデポジット"
   },
   "directDepositEther": {
-    "message": "Etherを直接受け取り"
+    "message": "Nukoを直接受け取り"
   },
   "directDepositEtherExplainer": {
-    "message": "Etherをすでにお持ちなら、MetaMaskの新しいウォレットにEtherを送信することができます。"
+    "message": "Nekoniumをすでにお持ちなら、NukoMaskの新しいウォレットにNekoniumを送信することができます。"
   },
   "done": {
     "message": "完了"
@@ -209,7 +209,7 @@
     "message": "パスワードを入力"
   },
   "etherscanView": {
-    "message": "Etherscanでアカウントを参照"
+    "message": "ブロックエクスプローラで参照"
   },
   "exchangeRate": {
     "message": "交換レート"
@@ -266,11 +266,11 @@
     "message": "必要ガスプライス"
   },
   "getEther": {
-    "message": "Etherをゲット"
+    "message": "Nukoを取得"
   },
   "getEtherFromFaucet": {
-    "message": "フォーセットで $1のEtherを得ることができます。",
-    "description": "Displays network name for Ether faucet"
+    "message": "フォーセットで $1のNUKOを得ることができます。",
+    "description": "Displays network name for NUKO faucet"
   },
   "greaterThanMin": {
     "message": " $1以上にして下さい。",
@@ -290,7 +290,7 @@
     "message": "トークンを隠しますか？?"
   },
   "howToDeposit": {
-    "message": "どのようにEtherをデポジットしますか?"
+    "message": "どのようにNUKOをデポジットしますか?"
   },
   "import": {
     "message": "追加",
@@ -360,7 +360,7 @@
     "message": "外部秘密鍵"
   },
   "mainnet": {
-    "message": "Ethereumメインネットワーク"
+    "message": "Nekoniumメインネットワーク"
   },
   "message": {
     "message": "メッセージ"
@@ -372,7 +372,7 @@
     "message": "マイアカウント"
   },
   "needEtherInWallet": {
-    "message": "MetaMaskを使って分散型アプリケーションを使用するためには、このウォレットにEtherが必要です。"
+    "message": "NukoMaskを使って分散型アプリケーションを使用するためには、このウォレットにNUKOが必要です。"
   },
   "needImportFile": {
     "message": "インポートするファイルを選択してください。",
@@ -526,10 +526,10 @@
     "message": "トークンを送る"
   },
   "onlySendToEtherAddress": {
-    "message": "ETHはイーサリウムアカウントのみに送信できます。"
+    "message": "NUKOはNekoniumアカウントのみに送信できます。"
   },
   "sendTokensAnywhere": {
-    "message": "イーサリアムアカウントを持っている人にトークンを送る"
+    "message": "Nekoniumアカウントを持っている人にトークンを送る"
   },
   "settings": {
     "message": "設定"
@@ -574,7 +574,7 @@
     "message": "宛先"
   },
   "toETHviaShapeShift": {
-    "message": "ShapeShiftで $1をETHにする",
+    "message": "ShapeShiftで $1をNUKOにする",
     "description": "system will fill in deposit type in start of message"
   },
   "tokenAddress": {
@@ -615,7 +615,7 @@
     "message": "新UIへようこそ！(ベータ版)"
   },
   "uiWelcomeMessage": {
-    "message": "現在Metamaskの新しいUIをお使いになっています。トークン送信など、新たな機能を試してみましょう！何か問題があればご報告ください。"
+    "message": "現在NukoMaskの新しいUIをお使いになっています。トークン送信など、新たな機能を試してみましょう！何か問題があればご報告ください。"
   },
   "unavailable": {
     "message": "有効ではありません。"
