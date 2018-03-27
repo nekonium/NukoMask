@@ -151,7 +151,7 @@
     "message": "デフォルトのNekonium送受信ネットワークはメインネットです。"
   },
   "denExplainer": {
-    "message": "DENとは、あなたのパスワードが暗号化されたMetaMask内のストレージです。"
+    "message": "DENとは、あなたのパスワードが暗号化されたNukoMask内のストレージです。"
   },
   "deposit": {
     "message": "受取り"
@@ -209,7 +209,7 @@
     "message": "パスワードを入力"
   },
   "etherscanView": {
-    "message": "ブロックエクスプローラで参照"
+    "message": "ブロックエクスプローラ"
   },
   "exchangeRate": {
     "message": "交換レート"
@@ -300,7 +300,7 @@
     "message": "アカウントのインポート"
   },
   "importAccountMsg": {
-    "message":"追加したアカウントはMetaMaskのアカウントシードフレーズとは関連付けられません。インポートしたアカウントについての詳細は"
+    "message":"追加したアカウントはNukoMaskのアカウントシードフレーズとは関連付けられません。インポートしたアカウントについての詳細は"
   },
   "importAnAccount": {
     "message": "アカウントをインポート"
@@ -590,7 +590,7 @@
     "message": "トークンシンボル"
   },
   "tokenWarning1": {
-    "message": "MetaMaskのアカウントで取得したアカウントのみ追加できます。他のアカウントを使用して取得したトークンは、カスタムトークンを使用してください。"
+    "message": "NukoMaskのアカウントで取得したアカウントのみ追加できます。他のアカウントを使用して取得したトークンは、カスタムトークンを使用してください。"
   },
   "total": {
     "message": "合計"
