@@ -44,10 +44,15 @@ InitializeMenuScreen.prototype.renderMenu = function (state) {
 
     h('.initialize-screen.flex-column.flex-center.flex-grow', [
 
-      h(Mascot, {
-        animationEventEmitter: this.animationEventEmitter,
-      }),
-
+      // h(Mascot, {
+      //   animationEventEmitter: this.animationEventEmitter,
+      // }),
+      h('img', {
+        style: {
+          width: '180px',
+        },
+        src: "/images/nukoja_green.png",
+      }, ),
       h('h1', {
         style: {
           fontSize: '1.3em',
