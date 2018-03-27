@@ -5,18 +5,18 @@ const connect = require('react-redux').connect
 const actions = require('../../actions')
 const networkNames = require('../../../../app/scripts/config.js').networkNames
 const ShapeshiftForm = require('../shapeshift-form')
+const t = require('../../../i18n')
 
-const DIRECT_DEPOSIT_ROW_TITLE = 'Directly Deposit NUKO'
-const DIRECT_DEPOSIT_ROW_TEXT = `If you already have some NUKO, the quickest way to get NUKO in
-your new wallet by direct deposit.`
-const COINBASE_ROW_TITLE = 'Buy on Coinbase'
-const COINBASE_ROW_TEXT = `Coinbase is the world’s most popular way to buy and sell bitcoin,
-ethereum, and litecoin.`
-const SHAPESHIFT_ROW_TITLE = 'Deposit with ShapeShift'
-const SHAPESHIFT_ROW_TEXT = `If you own other cryptocurrencies, you can trade and deposit Ether
-directly into your NukoMask wallet. No Account Needed.`
-const FAUCET_ROW_TITLE = 'Faucet'
-const facuetRowText = networkName => `Get Nekonium from a faucet for the ${networkName}`
+const DIRECT_DEPOSIT_ROW_TITLE = t('directDepositEther')
+const DIRECT_DEPOSIT_ROW_TEXT = t('directDepositEtherExplainer')
+const COINBASE_ROW_TITLE = t('buyCoinbase')
+const COINBASE_ROW_TEXT = t('buyCoinbaseExplainer')
+const SHAPESHIFT_ROW_TITLE = t('depositShapeShift')
+const SHAPESHIFT_ROW_TEXT = t('depositShapeShiftExplainer')
+const FAUCET_ROW_TITLE = t('testFaucet')
+const facuetRowText = (networkName) => {
+  return t('getEtherFromFaucet', [networkName])
+}
 
 function mapStateToProps (state) {
   return {
@@ -84,7 +84,7 @@ DepositEtherModal.prototype.renderRow = function ({
 
     ]),
 
-    h('div.deposit-ether-modal__buy-row__logo', [logo]),
+    h('div.deposit-ether-modal__buy-row__logo-container', [logo]),
 
       h('div.deposit-ether-modal__buy-row__description', [
 
@@ -111,17 +111,17 @@ DepositEtherModal.prototype.render = function () {
   const isTestNetwork = ['3', '4', '42'].find(n => n === network)
   const networkName = networkNames[network]+'('+network+')'
 
-  return h('div.deposit-ether-modal', {}, [
+  return h('div.page-container.page-container--full-width.page-container--full-height', {}, [
 
-    h('div.deposit-ether-modal__header', [
+    h('div.page-container__header', [
 
-      h('div.deposit-ether-modal__header__title', ['Deposit Nekonium']),
+      h('div.page-container__title', [t('depositEther')]),
 
-      h('div.deposit-ether-modal__header__description', [
-        'To interact with decentralized applications using NukoMask, you’ll need NUKO in your wallet.',
+      h('div.page-container__subtitle', [
+        t('needEtherInWallet'),
       ]),
 
-      h('div.deposit-ether-modal__header__close', {
+      h('div.page-container__header-close', {
         onClick: () => {
           this.setState({ buyingWithShapeshift: false })
           this.props.hideWarning()
@@ -131,7 +131,7 @@ DepositEtherModal.prototype.render = function () {
 
     ]),
 
-    h('div.deposit-ether-modal__buy-rows', [
+    h('.page-container__content', {}, [
 
       this.renderRow({
         logo: h('img.deposit-ether-modal__buy-row__eth-logo', { src: '../../../images/3_64.png' }),
@@ -158,34 +158,10 @@ DepositEtherModal.prototype.render = function () {
         ]),
       },),
 
-      // this.renderRow({
-      //   logo: h('img.deposit-ether-modal__buy-row__coinbase-logo', {
-      //     src: '../../../images/coinbase logo.png',
-      //   }),
-      //   title: COINBASE_ROW_TITLE,
-      //   text: COINBASE_ROW_TEXT,
-      //   buttonLabel: 'Continue to Coinbase',
-      //   onButtonClick: () => toCoinbase(address),
-      //   hide: isTestNetwork || buyingWithShapeshift,
-      // }),
 
-      // this.renderRow({
-      //   logo: h('img.deposit-ether-modal__buy-row__shapeshift-logo', {
-      //     src: '../../../images/shapeshift logo.png',
-      //   }),
-      //   title: SHAPESHIFT_ROW_TITLE,
-      //   text: SHAPESHIFT_ROW_TEXT,
-      //   buttonLabel: 'Buy with Shapeshift',
-      //   onButtonClick: () => this.setState({ buyingWithShapeshift: true }),
-      //   hide: isTestNetwork,
-      //   hideButton: buyingWithShapeshift,
-      //   hideTitle: buyingWithShapeshift,
-      //   onBackClick: () => this.setState({ buyingWithShapeshift: false }),
-      //   showBackButton: this.state.buyingWithShapeshift,
-      //   className: buyingWithShapeshift && 'deposit-ether-modal__buy-row__shapeshift-buy',
-      // }),
 
-      buyingWithShapeshift && h(ShapeshiftForm),
+        buyingWithShapeshift && h(ShapeshiftForm),
+
 
     ]),
   ])

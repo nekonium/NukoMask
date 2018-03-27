@@ -6,6 +6,7 @@ const actions = require('../../actions')
 const Dropdown = require('./components/dropdown').Dropdown
 const DropdownMenuItem = require('./components/dropdown').DropdownMenuItem
 const NetworkDropdownIcon = require('./components/network-dropdown-icon')
+const t = require('../../../i18n')
 const R = require('ramda')
 
 // classes from nodes of the toggle element.
@@ -93,13 +94,13 @@ NetworkDropdown.prototype.render = function () {
   }, [
 
     h('div.network-dropdown-header', {}, [
-      h('div.network-dropdown-title', {}, 'Networks'),
+      h('div.network-dropdown-title', {}, t('networks')),
 
       h('div.network-dropdown-divider'),
 
       h('div.network-dropdown-content',
         {},
-        'The default network for Nekonium transactions is Main Net.'
+        t('defaultNetwork')
       ),
     ]),
 
@@ -114,82 +115,20 @@ NetworkDropdown.prototype.render = function () {
       [
         providerType === 'mainnet' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
-          backgroundColor: '#038789', // $blue-lagoon
+          backgroundColor: '#29B6AF', // $java
           isSelected: providerType === 'mainnet',
         }),
         h('span.network-name-item', {
           style: {
             color: providerType === 'mainnet' ? '#ffffff' : '#9b9b9b',
           },
-        }, 'Main Nekonium Network'),
+        }, t('mainnet')),
       ]
     ),
 
-    // h(
-    //   DropdownMenuItem,
-    //   {
-    //     key: 'ropsten',
-    //     closeMenu: () => this.props.hideNetworkDropdown(),
-    //     onClick: () => props.setProviderType('ropsten'),
-    //     style: dropdownMenuItemStyle,
-    //   },
-    //   [
-    //     providerType === 'ropsten' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-    //     h(NetworkDropdownIcon, {
-    //       backgroundColor: '#e91550', // $crimson
-    //       isSelected: providerType === 'ropsten',
-    //     }),
-    //     h('span.network-name-item', {
-    //       style: {
-    //         color: providerType === 'ropsten' ? '#ffffff' : '#9b9b9b',
-    //       },
-    //     }, 'Ropsten Test Network'),
-    //   ]
-    // ),
 
-    // h(
-    //   DropdownMenuItem,
-    //   {
-    //     key: 'kovan',
-    //     closeMenu: () => this.props.hideNetworkDropdown(),
-    //     onClick: () => props.setProviderType('kovan'),
-    //     style: dropdownMenuItemStyle,
-    //   },
-    //   [
-    //     providerType === 'kovan' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-    //     h(NetworkDropdownIcon, {
-    //       backgroundColor: '#690496', // $purple
-    //       isSelected: providerType === 'kovan',
-    //     }),
-    //     h('span.network-name-item', {
-    //       style: {
-    //         color: providerType === 'kovan' ? '#ffffff' : '#9b9b9b',
-    //       },
-    //     }, 'Kovan Test Network'),
-    //   ]
-    // ),
 
-    // h(
-    //   DropdownMenuItem,
-    //   {
-    //     key: 'rinkeby',
-    //     closeMenu: () => this.props.hideNetworkDropdown(),
-    //     onClick: () => props.setProviderType('rinkeby'),
-    //     style: dropdownMenuItemStyle,
-    //   },
-    //   [
-    //     providerType === 'rinkeby' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
-    //     h(NetworkDropdownIcon, {
-    //       backgroundColor: '#ebb33f', // $tulip-tree
-    //       isSelected: providerType === 'rinkeby',
-    //     }),
-    //     h('span.network-name-item', {
-    //       style: {
-    //         color: providerType === 'rinkeby' ? '#ffffff' : '#9b9b9b',
-    //       },
-    //     }, 'Rinkeby Test Network'),
-    //   ]
-    // ),
+
 
     h(
       DropdownMenuItem,
@@ -209,7 +148,7 @@ NetworkDropdown.prototype.render = function () {
           style: {
             color: activeNetwork === 'http://localhost:8293' ? '#ffffff' : '#9b9b9b',
           },
-        }, 'Localhost 8293'),
+        }, t('localhost')),
       ]
     ),
 
@@ -233,7 +172,7 @@ NetworkDropdown.prototype.render = function () {
           style: {
             color: activeNetwork === 'custom' ? '#ffffff' : '#9b9b9b',
           },
-        }, 'Custom RPC'),
+        }, t('customRPC')),
       ]
     ),
 
@@ -248,15 +187,9 @@ NetworkDropdown.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = 'Main Nekonium Network'
-  // } else if (providerName === 'ropsten') {
-  //   name = 'Ropsten Test Network'
-  // } else if (providerName === 'kovan') {
-  //   name = 'Kovan Test Network'
-  // } else if (providerName === 'rinkeby') {
-  //   name = 'Rinkeby Test Network'
+    name = t('mainnet')
   } else {
-    name = 'Unknown Private Network'
+    name = t('unknownNetwork')
   }
 
   return name

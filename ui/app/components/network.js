@@ -3,6 +3,7 @@ const h = require('react-hyperscript')
 const classnames = require('classnames')
 const inherits = require('util').inherits
 const NetworkDropdownIcon = require('./dropdowns/components/network-dropdown-icon')
+const t = require('../../i18n')
 
 module.exports = Network
 
@@ -33,7 +34,7 @@ Network.prototype.render = function () {
       onClick: (event) => this.props.onClick(event),
     }, [
       h('img', {
-        title: 'Attempting to connect to blockchain.',
+        title: t('attemptingConnect'),
         style: {
           width: '27px',
         },
@@ -41,22 +42,10 @@ Network.prototype.render = function () {
       }),
     ])
   } else if (providerName === 'mainnet') {
-    hoverText = 'Main Nekonium Network'
+    hoverText = t('mainnet')
     iconName = 'ethereum-network'
-  }/* else if (providerName === 'ropsten') {
-    hoverText = 'Ropsten Test Network'
-    iconName = 'ropsten-test-network'
-  } else if (parseInt(networkNumber) === 3) {
-    hoverText = 'Ropsten Test Network'
-    iconName = 'ropsten-test-network'
-  } else if (providerName === 'kovan') {
-    hoverText = 'Kovan Test Network'
-    iconName = 'kovan-test-network'
-  } else if (providerName === 'rinkeby') {
-    hoverText = 'Rinkeby Test Network'
-    iconName = 'rinkeby-test-network'
-  }*/ else {
-    hoverText = 'Unknown Private Network'
+  } else {
+    hoverText = t('unknownNetwork')
     iconName = 'unknown-private-network'
   }
 
@@ -84,36 +73,10 @@ Network.prototype.render = function () {
                 backgroundColor: '#038789', // $blue-lagoon
                 nonSelectBackgroundColor: '#15afb2',
               }),
-              h('.network-name', 'Main Network'),
+              h('.network-name', t('mainnet')),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
-          // case 'ropsten-test-network':
-          //   return h('.network-indicator', [
-          //     h(NetworkDropdownIcon, {
-          //       backgroundColor: '#e91550', // $crimson
-          //       nonSelectBackgroundColor: '#ec2c50',
-          //     }),
-          //     h('.network-name', 'Ropsten Test Net'),
-          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-          //   ])
-          // case 'kovan-test-network':
-          //   return h('.network-indicator', [
-          //     h(NetworkDropdownIcon, {
-          //       backgroundColor: '#690496', // $purple
-          //       nonSelectBackgroundColor: '#b039f3',
-          //     }),
-          //     h('.network-name', 'Kovan Test Net'),
-          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-          //   ])
-          // case 'rinkeby-test-network':
-          //   return h('.network-indicator', [
-          //     h(NetworkDropdownIcon, {
-          //       backgroundColor: '#ebb33f', // $tulip-tree
-          //       nonSelectBackgroundColor: '#ecb23e',
-          //     }),
-          //     h('.network-name', 'Rinkeby Test Net'),
-          //     h('i.fa.fa-chevron-down.fa-lg.network-caret'),
-          //   ])
+
           default:
             return h('.network-indicator', [
               h('i.fa.fa-question-circle.fa-lg', {
@@ -123,7 +86,7 @@ Network.prototype.render = function () {
                 },
               }),
 
-              h('.network-name', 'Private Network'),
+              h('.network-name', t('privateNetwork')),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
         }

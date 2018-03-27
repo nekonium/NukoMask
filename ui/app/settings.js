@@ -10,6 +10,7 @@ const TabBar = require('./components/tab-bar')
 const SimpleDropdown = require('./components/dropdowns/simple-dropdown')
 const ToggleButton = require('react-toggle-button')
 const { OLD_UI_NETWORK_TYPE } = require('../../app/scripts/config').enums
+const t = require('../i18n')
 
 const getInfuraCurrencyOptions = () => {
   const sortedCurrencies = infuraCurrencies.objects.sort((a, b) => {
@@ -44,8 +45,8 @@ class Settings extends Component {
     return h('div.settings__tabs', [
       h(TabBar, {
         tabs: [
-          { content: 'Settings', key: 'settings' },
-          { content: 'Info', key: 'info' },
+          { content: t('settings'), key: 'settings' },
+          { content: t('info'), key: 'info' },
         ],
         defaultTab: activeTab,
         tabSelected: key => this.setState({ activeTab: key }),
@@ -58,7 +59,7 @@ class Settings extends Component {
 
     return h('div.settings__content-row', [
       h('div.settings__content-item', [
-        h('span', 'Use Blockies Identicon'),
+        h('span', t('blockiesIdenticon')),
       ]),
       h('div.settings__content-item', [
         h('div.settings__content-item-col', [
@@ -78,13 +79,13 @@ class Settings extends Component {
 
     return h('div.settings__content-row', [
       h('div.settings__content-item', [
-        h('span', 'Current Conversion'),
+        h('span', t('currentConversion')),
         h('span.settings__content-description', `Updated ${Date(conversionDate)}`),
       ]),
       h('div.settings__content-item', [
         h('div.settings__content-item-col', [
           h(SimpleDropdown, {
-            placeholder: 'Select Currency',
+            placeholder: t('selectCurrency'),
             options: getInfuraCurrencyOptions(),
             selectedOption: currentCurrency,
             onSelect: newCurrency => setCurrentCurrency(newCurrency),
@@ -101,31 +102,16 @@ class Settings extends Component {
     switch (provider.type) {
 
       case 'mainnet':
-        title = 'Current Network'
-        value = 'Main Nekonium Network'
+        title = t('currentNetwork')
+        value = t('mainnet')
         color = '#038789'
         break
 
-      // case 'ropsten':
-      //   title = 'Current Network'
-      //   value = 'Ropsten Test Network'
-      //   color = '#e91550'
-      //   break
+ 
 
-      // case 'kovan':
-      //   title = 'Current Network'
-      //   value = 'Kovan Test Network'
-      //   color = '#690496'
-      //   break
-
-      // case 'rinkeby':
-      //   title = 'Current Network'
-      //   value = 'Rinkeby Test Network'
-      //   color = '#ebb33f'
-      //   break
 
       default:
-        title = 'Current RPC'
+        title = t('currentRpc')
         value = provider.rpcTarget
     }
 
@@ -146,12 +132,12 @@ class Settings extends Component {
     return (
       h('div.settings__content-row', [
         h('div.settings__content-item', [
-          h('span', 'New RPC URL'),
+          h('span', t('newRPC')),
         ]),
         h('div.settings__content-item', [
           h('div.settings__content-item-col', [
             h('input.settings__input', {
-              placeholder: 'New RPC URL',
+              placeholder: t('newRPC'),
               onChange: event => this.setState({ newRpc: event.target.value }),
               onKeyPress: event => {
                 if (event.key === 'Enter') {
@@ -164,7 +150,7 @@ class Settings extends Component {
                 event.preventDefault()
                 this.validateRpc(this.state.newRpc)
               },
-            }, 'Save'),
+            }, t('save')),
           ]),
         ]),
       ])
@@ -180,9 +166,9 @@ class Settings extends Component {
       const appendedRpc = `http://${newRpc}`
 
       if (validUrl.isWebUri(appendedRpc)) {
-        displayWarning('URIs require the appropriate HTTP/HTTPS prefix.')
+        displayWarning(t('uriErrorMsg'))
       } else {
-        displayWarning('Invalid RPC URI')
+        displayWarning(t('invalidRPC'))
       }
     }
   }
@@ -191,10 +177,10 @@ class Settings extends Component {
     return (
       h('div.settings__content-row', [
         h('div.settings__content-item', [
-          h('div', 'State Logs'),
+          h('div', t('stateLogs')),
           h(
             'div.settings__content-description',
-            'State logs contain your public account addresses and sent transactions.'
+            t('stateLogsDescription')
           ),
         ]),
         h('div.settings__content-item', [
@@ -203,13 +189,13 @@ class Settings extends Component {
               onClick (event) {
                 window.logStateString((err, result) => {
                   if (err) {
-                    this.state.dispatch(actions.displayWarning('Error in retrieving state logs.'))
+                    this.state.dispatch(actions.displayWarning(t('stateLogError')))
                   } else {
                     exportAsFile('MetaMask State Logs.json', result)
                   }
                 })
               },
-            }, 'Download State Logs'),
+            }, t('downloadStateLogs')),
           ]),
         ]),
       ])
@@ -221,7 +207,7 @@ class Settings extends Component {
 
     return (
       h('div.settings__content-row', [
-        h('div.settings__content-item', 'Reveal Seed Words'),
+        h('div.settings__content-item', t('revealSeedWords')),
         h('div.settings__content-item', [
           h('div.settings__content-item-col', [
             h('button.settings__clear-button.settings__clear-button--red', {
@@ -229,7 +215,7 @@ class Settings extends Component {
                 event.preventDefault()
                 revealSeedConfirmation()
               },
-            }, 'Reveal Seed Words'),
+            }, t('revealSeedWords')),
           ]),
         ]),
       ])
@@ -241,7 +227,7 @@ class Settings extends Component {
 
     return (
       h('div.settings__content-row', [
-        h('div.settings__content-item', 'Use old UI'),
+        h('div.settings__content-item', t('useOldUI')),
         h('div.settings__content-item', [
           h('div.settings__content-item-col', [
             h('button.settings__clear-button.settings__clear-button--orange', {
@@ -249,7 +235,7 @@ class Settings extends Component {
                 event.preventDefault()
                 setFeatureFlagToBeta()
               },
-            }, 'Use old UI'),
+            }, t('useOldUI')),
           ]),
         ]),
       ])
@@ -260,7 +246,7 @@ class Settings extends Component {
     const { showResetAccountConfirmationModal } = this.props
 
     return h('div.settings__content-row', [
-      h('div.settings__content-item', 'Reset Account'),
+      h('div.settings__content-item', t('resetAccount')),
       h('div.settings__content-item', [
         h('div.settings__content-item-col', [
           h('button.settings__clear-button.settings__clear-button--orange', {
@@ -268,7 +254,7 @@ class Settings extends Component {
               event.preventDefault()
               showResetAccountConfirmationModal()
             },
-          }, 'Reset Account'),
+          }, t('resetAccount')),
         ]),
       ]),
     ])
@@ -304,7 +290,7 @@ class Settings extends Component {
   renderInfoLinks () {
     return (
       h('div.settings__content-item.settings__content-item--without-height', [
-        h('div.settings__info-link-header', 'Links'),
+        h('div.settings__info-link-header', t('links')),
         h('div.settings__info-link-item', [
           h('a', {
             href: 'https://nekonium.github.io/',
@@ -349,7 +335,7 @@ class Settings extends Component {
             h('div.settings__info-item', [
               h(
                 'div.settings__info-about',
-                'NukoMask is forked from MetaMask.\nNukoMask provides Nekonium with equivalent functionality to MetaMask.',
+                t('builtInCalifornia')
               ),
             ]),
             h('div.settings__info-item', [
@@ -431,3 +417,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 module.exports = connect(mapStateToProps, mapDispatchToProps)(Settings)
+
