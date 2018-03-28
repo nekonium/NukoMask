@@ -329,8 +329,8 @@ class Settings extends Component {
           h('div.settings__content-item.settings__content-item--without-height', [
             this.renderLogo(),
             h('div.settings__info-item', [
-              h('div.settings__info-version-header', 'NukoMask Version'),
-              h('div.settings__info-version-number', `${version}`),
+              h('div.settings__info-version-header', 'NukoMask'),
+              h('div.settings__info-version-number', `version ${version}`),
             ]),
             h('div.settings__info-item', [
               h(

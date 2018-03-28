@@ -167,7 +167,7 @@
     "message": "NUKOをデポジット"
   },
   "depositEther": {
-    "message": "Nukoをデポジット"
+    "message": "Nukoを受け取る"
   },
   "depositFiat": {
     "message": "法定通貨でデポジット"
@@ -521,6 +521,9 @@
   },
   "send": {
     "message": "送信"
+  },
+  "sendETH": {
+    "message": "NUKOの送信"
   },
   "sendTokens": {
     "message": "トークンを送る"

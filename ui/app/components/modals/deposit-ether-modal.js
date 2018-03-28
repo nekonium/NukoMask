@@ -137,7 +137,7 @@ DepositEtherModal.prototype.render = function () {
         logo: h('img.deposit-ether-modal__buy-row__eth-logo', { src: '../../../images/3_64.png' }),
         title: DIRECT_DEPOSIT_ROW_TITLE,
         text: DIRECT_DEPOSIT_ROW_TEXT,
-        buttonLabel: 'View Account',
+        buttonLabel: t('viewAccount'),
         onButtonClick: () => this.goToAccountDetailsModal(),
         hide: buyingWithShapeshift,
       }),

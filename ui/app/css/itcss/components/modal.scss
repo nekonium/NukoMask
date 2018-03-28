@@ -626,6 +626,7 @@
       font-size: 16px;
       line-height: 22px;
       margin-top: 10px;
+      margin-left: 18px;
     }
 
     &__close::after {
@@ -670,6 +671,9 @@
     flex: 1 0 auto;
     padding: 30px 0 20px;
     min-height: 170px;
+    margin-left: 18px;
+    margin-right: 18px;
+    
 
     @media screen and (max-width: 575px) {
       min-height: 270px;

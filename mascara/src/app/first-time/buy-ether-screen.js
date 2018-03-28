@@ -10,8 +10,8 @@ import {buyEth, showAccountDetail} from '../../../../ui/app/actions'
 
 class BuyEtherScreen extends Component {
   static OPTION_VALUES = {
-    COINBASE: 'coinbase',
-    SHAPESHIFT: 'shapeshift',
+    // COINBASE: 'coinbase',
+    // SHAPESHIFT: 'shapeshift',
     QR_CODE: 'qr_code',
   };
 
@@ -20,14 +20,14 @@ class BuyEtherScreen extends Component {
       name: 'Direct Deposit',
       value: BuyEtherScreen.OPTION_VALUES.QR_CODE,
     },
-    {
-      name: 'Buy with Dollars',
-      value: BuyEtherScreen.OPTION_VALUES.COINBASE,
-    },
-    {
-      name: 'Buy with Cryptos',
-      value: BuyEtherScreen.OPTION_VALUES.SHAPESHIFT,
-    },
+    // {
+    //   name: 'Buy with Dollars',
+    //   value: BuyEtherScreen.OPTION_VALUES.COINBASE,
+    // },
+    // {
+    //   name: 'Buy with Cryptos',
+    //   value: BuyEtherScreen.OPTION_VALUES.SHAPESHIFT,
+    // },
   ];
 
   static propTypes = {
@@ -126,7 +126,7 @@ class BuyEtherScreen extends Component {
         return (
           <div className='buy-ether__action-content-wrapper'>
             <div dangerouslySetInnerHTML={{ __html: qrImage.createTableTag(4) }} />
-            <div className='buy-ether__body-text'>Deposit Ether directly into your account.</div>
+            <div className='buy-ether__body-text'>Deposit NUKO directly into your account.</div>
             <div className='buy-ether__small-body-text'>(This is the account address that MetaMask created for you to recieve funds.)</div>
             <div className='buy-ether__buttons'>
               <button
@@ -151,9 +151,9 @@ class BuyEtherScreen extends Component {
     return (
       <div className='buy-ether'>
         <Identicon address={this.props.address} diameter={70} />
-        <div className='buy-ether__title'>Deposit Ether</div>
+        <div className='buy-ether__title'>Deposit Nekonium</div>
         <div className='buy-ether__body-text'>
-          MetaMask works best if you have Ether in your account to pay for transaction gas fees and more. To get Ether, choose from one of these methods.
+          NukoMask works best if you have Nuko in your account to pay for transaction gas fees and more. To get Nuko, choose from one of these methods.
         </div>
         <div className='buy-ether__content-wrapper'>
           <div className='buy-ether__content-headline-wrapper'>
