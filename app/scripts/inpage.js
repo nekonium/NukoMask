@@ -8,9 +8,12 @@ if(typeof window.nukomask !== 'undefined'){
     and try again.`)
   }
 }
-window.nukomask={
-  'web3':null,
-  'log':null,
+if(typeof window.nukomask ==='undefined'){
+  window.nukomask={
+    'web3':null,
+    'log':null,
+  }
+}else{
 }
 {
 
@@ -43,8 +46,8 @@ window.nukomask={
   
   // setup background connection
   var metamaskStream = new LocalMessageDuplexStream({
-    name: 'inpage',
-    target: 'contentscript',
+    name: 'inpage_nuko',
+    target: 'contentscript_nuko',
   })
   
   // compose the inpage provider

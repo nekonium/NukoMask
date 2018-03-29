@@ -330,7 +330,7 @@ function copyTask(opts){
 function zipTask(target) {
   return () => {
     return gulp.src(`dist/${target}/**`)
-    .pipe(zip(`nukoja-${target}-${manifest.version}.zip`))
+    .pipe(zip(`nukomask-${target}-${manifest.version}.zip`))
     .pipe(gulp.dest('builds'))
   }
 }

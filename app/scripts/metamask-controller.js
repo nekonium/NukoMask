@@ -240,7 +240,7 @@ module.exports = class MetamaskController extends EventEmitter {
     const providerOpts = {
       static: {
         eth_syncing: false,
-        web3_clientVersion: `MetaMask/v${version}`,
+        web3_clientVersion: `NukoMask/v${version}`,
       },
       // account mgmt
       getAccounts: (cb) => {
