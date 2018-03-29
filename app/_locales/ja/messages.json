@@ -568,7 +568,7 @@
     "message": "送信"
   },
   "takesTooLong": {
-    "message": "長くかかりすぎていますか?"
+    "message": "長時間かかりますか?"
   },
   "testFaucet": {
     "message": "Faucetをテスト"
