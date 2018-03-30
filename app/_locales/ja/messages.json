@@ -351,7 +351,7 @@
     "message": "トークンをロード中..."
   },
   "localhost": {
-    "message": "Localhost 8545"
+    "message": "Localhost 8293"
   },
   "logout": {
     "message": "ログアウト"
@@ -448,7 +448,7 @@
     "message": "シードをここにペーストして下さい!"
   },
   "pleaseReviewTransaction": {
-    "message": "トランザクションをレビューして下さい。"
+    "message": "トランザクションを確認して下さい。"
   },
   "privateKey": {
     "message": "秘密鍵",
@@ -574,7 +574,7 @@
     "message": "Faucetをテスト"
   },
   "to": {
-    "message": "宛先"
+    "message": "送信先"
   },
   "toETHviaShapeShift": {
     "message": "ShapeShiftで $1をNUKOにする",
@@ -612,7 +612,7 @@
     "description": "Followed by a link (here) to view token balances"
   },
   "typePassword": {
-    "message": "パスワードタイプ"
+    "message": "パスワードの入力"
   },
   "uiWelcome": {
     "message": "新UIへようこそ！(ベータ版)"

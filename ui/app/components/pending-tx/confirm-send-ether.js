@@ -235,14 +235,15 @@ ConfirmSendEther.prototype.render = function () {
     memo,
     gasFeeInHex,
     amountInFIAT,
+    amountInETH,
     totalInFIAT,
     totalInETH,
   } = this.getData()
 
-  const title = txMeta.lastGasPrice ? 'Reprice Transaction' : 'Confirm'
+  const title = txMeta.lastGasPrice ? 'Reprice Transaction' : t('confirm')
   const subtitle = txMeta.lastGasPrice
     ? 'Increase your gas fee to attempt to overwrite and speed up your transaction'
-    : 'Please review your transaction.'
+    : t('pleaseReviewTransaction')
 
   // This is from the latest master
   // It handles some of the errors that we are not currently handling
@@ -290,8 +291,8 @@ ConfirmSendEther.prototype.render = function () {
         //   `You're sending to Recipient ...${toAddress.slice(toAddress.length - 4)}`,
         // ]),
 
-        h('h3.flex-center.confirm-screen-send-amount', [`${amountInFIAT}`]),
-        h('h3.flex-center.confirm-screen-send-amount-currency', [ currentCurrency.toUpperCase() ]),
+        h('h3.flex-center.confirm-screen-send-amount', [`${amountInETH}`]),
+        h('h3.flex-center.confirm-screen-send-amount-currency', [ "NUKO" ]),
         h('div.flex-center.confirm-memo-wrapper', [
           h('h3.confirm-screen-send-memo', [ memo ? `"${memo}"` : '' ]),
         ]),
@@ -332,8 +333,8 @@ ConfirmSendEther.prototype.render = function () {
             ]),
 
             h('div.confirm-screen-section-column', [
-              h('div.confirm-screen-row-info', `${totalInFIAT} ${currentCurrency.toUpperCase()}`),
-              h('div.confirm-screen-row-detail', `${totalInETH} ETH`),
+              h('div.confirm-screen-row-info', `${totalInETH} NUKO`),
+              h('div.confirm-screen-row-detail', `${totalInFIAT} ${currentCurrency.toUpperCase()}`),
             ]),
           ]),
         ]),

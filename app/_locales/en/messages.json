@@ -562,7 +562,7 @@
     "message": "Personal address detected. Input the token contract address."
   },
   "pleaseReviewTransaction": {
-    "message": "Please review your transaction."
+    "message": "送信内容を確認してください。"
   },
   "privacyMsg": {
     "message": "Privacy Policy"
