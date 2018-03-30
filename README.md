@@ -13,7 +13,7 @@ The function of NukoMask is almost the same as MetaMask, but the following point
 **There is no guarantee on the quality of software, so use it at your own risk. If you lose ETH or NUKO or Others, We can not compensate at all.**
 
 ## Support
-Visit our Dicord channel #NukoMask https://discord.gg/C8mJg44
+Visit our Discord channel #NukoMask https://discord.gg/C8mJg44
 
 ## Thanks
 
