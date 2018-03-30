@@ -6,7 +6,7 @@ Forked from MetaMask. Compatible with nekonium nodes. Still under development
 
 ## Support
 
-If you're a user seeking support, [here is our support site](https://nekonium.github.io/).
+Visi our Dicord channel #NukoMask https://discord.gg/C8mJg44
 
 ## Developing Compatible Dapps
 
