@@ -7,7 +7,7 @@ const abi = require('human-standard-token-abi')
 const abiDecoder = require('abi-decoder')
 abiDecoder.addABI(abi)
 const Identicon = require('./identicon')
-const contractMap = require('eth-contract-metadata')
+const contractMap = require('nuko-contract-metadata')
 
 const actions = require('../actions')
 const { conversionUtil, multiplyCurrencies } = require('../conversion-util')

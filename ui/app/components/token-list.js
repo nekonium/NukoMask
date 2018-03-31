@@ -16,7 +16,7 @@ function mapStateToProps (state) {
 }
 
 const defaultTokens = []
-const contracts = require('eth-contract-metadata')
+const contracts = require('nuko-contract-metadata')
 for (const address in contracts) {
   const contract = contracts[address]
   if (contract.erc20) {

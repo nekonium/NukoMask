@@ -63,7 +63,7 @@ gulp.task('copy:images', copyTask({
   ],
 }))
 gulp.task('copy:contractImages', copyTask({
-  source: './node_modules/eth-contract-metadata/images/',
+  source: './node_modules/nuko-contract-metadata/images/',
   destinations: [
     './dist/firefox/images/contract',
     './dist/chrome/images/contract',

@@ -5,7 +5,7 @@
  * otherwise returns null.
  */
 
-const contractMap = require('eth-contract-metadata')
+const contractMap = require('nuko-contract-metadata')
 const ethUtil = require('ethereumjs-util')
 
 module.exports = function (addr, identities = {}) {
