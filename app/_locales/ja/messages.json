@@ -20,6 +20,9 @@
   "addToken": {
     "message": "トークンを追加"
   },
+  "addTokens": {
+    "message": "トークンを追加"
+  },  
   "amount": {
     "message": "総額"
   },
@@ -45,6 +48,9 @@
   },
   "balance": {
     "message": "残高:"
+  },
+  "balances": {
+    "message": "あなたの残高"
   },
   "balanceIsInsufficientGas": {
     "message": "現在のガス総量に対して残高が不足しています"
@@ -137,6 +143,9 @@
   },
   "customGas": {
     "message": "ガスのカスタマイズ"
+  },
+  "customToken": {
+    "message": "カスタムトークン"
   },
   "customize": {
     "message": "カスタマイズ"
@@ -334,12 +343,21 @@
     "message": "JSONファイル",
     "description": "format for importing an account"
   },
+  "keepTrackTokens": {
+    "message": "NukoMaskアカウントで入手したトークンを追跡でできます。"
+  },
   "kovan": {
     "message": "Kovanテストネットワーク"
+  },
+  "learnMore": {
+    "message": "詳細"
   },
   "lessThanMax": {
     "message": " $1以下にして下さい。",
     "description": "helper for inputting hex as decimal input"
+  },
+  "likeToAddTokens": {
+    "message": "トークンを追加しますか?"
   },
   "limit": {
     "message": "リミット"
@@ -448,7 +466,10 @@
     "message": "シードをここにペーストして下さい!"
   },
   "pleaseReviewTransaction": {
-    "message": "トランザクションを確認して下さい。"
+    "message": "送信内容を確認して下さい。"
+  },
+  "popularTokens": {
+    "message": "人気のトークン"
   },
   "privateKey": {
     "message": "秘密鍵",
@@ -530,6 +551,9 @@
   },
   "onlySendToEtherAddress": {
     "message": "NUKOはNekoniumアカウントのみに送信できます。"
+  },
+  "searchTokens": {
+    "message": "トークンの検索"
   },
   "sendTokensAnywhere": {
     "message": "Nekoniumアカウントを持っている人にトークンを送る"
@@ -649,7 +673,7 @@
     "message": "警告"
   },
   "whatsThis": {
-    "message": "これは何でしょう?"
+    "message": "この機能について"
   },
   "yourSigRequested": {
     "message": "あなたの署名がリクエストされています。"

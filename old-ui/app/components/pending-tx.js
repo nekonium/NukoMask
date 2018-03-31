@@ -295,7 +295,7 @@ PendingTx.prototype.render = function () {
               style: {
                 fontSize: '0.9em',
               },
-            }, 'Recipient address is invalid. Sending this transaction will result in a loss of ETH.')
+            }, 'Recipient address is invalid. Sending this transaction will result in a loss of NUKO.')
           : null,
 
           insufficientBalance ?

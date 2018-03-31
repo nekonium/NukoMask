@@ -105,7 +105,7 @@ SignatureRequest.prototype.renderBalance = function () {
 
     h('div.request-signature__balance-text', [t('balance')]),
 
-    h('div.request-signature__balance-value', `${balanceInEther} ETH`),
+    h('div.request-signature__balance-value', `${balanceInEther} NUKO`),
 
   ])
 }
@@ -223,10 +223,10 @@ SignatureRequest.prototype.renderFooter = function () {
   }
 
   return h('div.request-signature__footer', [
-    h('button.request-signature__footer__cancel-button', {
+    h('button.btn-secondary--lg.request-signature__footer__cancel-button', {
       onClick: cancel,
     }, t('cancel')),
-    h('button.request-signature__footer__sign-button', {
+    h('button.btn-primary--lg', {
       onClick: sign,
     }, t('sign')),
   ])
