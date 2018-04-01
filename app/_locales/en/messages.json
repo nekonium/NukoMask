@@ -497,7 +497,7 @@
     "description": "Password and file needed to import an account"
   },
   "negativeETH": {
-    "message": "Can not send negative amounts of ETH."
+    "message": "Can not send negative amounts of NUKO."
   },
   "networks": {
     "message": "Networks"

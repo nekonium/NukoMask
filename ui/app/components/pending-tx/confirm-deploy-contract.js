@@ -180,11 +180,11 @@ class ConfirmDeployContract extends Component {
       h('section.flex-row.flex-center.confirm-screen-row', [
         h('span.confirm-screen-label.confirm-screen-section-column', [ t('gasFee') ]),
         h('div.confirm-screen-section-column', [
-          h('div.confirm-screen-row-info', `${fiatGas} ${currentCurrency.toUpperCase()}`),
+          h('div.confirm-screen-row-info', `${ethGas} NUKO`),
 
           h(
-            'div.confirm-screen-row-detail',
-            `${ethGas} ETH`
+            'div.confirm-screen-row-detail',`${fiatGas} ${currentCurrency.toUpperCase()}`
+            
           ),
         ]),
       ])
@@ -193,15 +193,15 @@ class ConfirmDeployContract extends Component {
 
   renderHeroAmount () {
     const { currentCurrency } = this.props
-    const { fiat: fiatAmount } = this.getAmount()
+    const { token: tokenAmount } = this.getAmount()
     const txMeta = this.gatherTxMeta()
     const txParams = txMeta.txParams || {}
     const { memo = '' } = txParams
 
     return (
       h('div.confirm-send-token__hero-amount-wrapper', [
-        h('h3.flex-center.confirm-screen-send-amount', `${fiatAmount}`),
-        h('h3.flex-center.confirm-screen-send-amount-currency', currentCurrency.toUpperCase()),
+        h('h3.flex-center.confirm-screen-send-amount', `${tokenAmount}`),
+        h('h3.flex-center.confirm-screen-send-amount-currency', "NUKO"),
         h('div.flex-center.confirm-memo-wrapper', [
           h('h3.confirm-screen-send-memo', memo),
         ]),
@@ -222,8 +222,8 @@ class ConfirmDeployContract extends Component {
         ]),
 
         h('div.confirm-screen-section-column', [
-          h('div.confirm-screen-row-info', `${fiatAmount + fiatGas} ${currentCurrency.toUpperCase()}`),
-          h('div.confirm-screen-row-detail', `${tokenAmount + ethGas} ETH`),
+          h('div.confirm-screen-row-info', `${tokenAmount + ethGas} NUKO`),
+          h('div.confirm-screen-row-detail', `${fiatAmount + fiatGas} ${currentCurrency.toUpperCase()}`),
         ]),
       ])
     )
