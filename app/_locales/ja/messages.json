@@ -389,6 +389,9 @@
   "myAccounts": {
     "message": "マイアカウント"
   },
+  "mustSelectOne": {
+    "message": "一つ以上のトークンを選択して下さい。"
+  },
   "needEtherInWallet": {
     "message": "NukoMaskを使って分散型アプリケーションを使用するためには、このウォレットにNUKOが必要です。"
   },

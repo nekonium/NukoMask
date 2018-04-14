@@ -135,7 +135,7 @@
     "metamask-logo": "^2.1.2",
     "mkdirp": "^0.5.1",
     "multiplex": "^6.7.0",
-    "nuko-contract-metadata": "^0.1.2",
+    "nuko-contract-metadata": "^0.1.3",
     "number-to-bn": "^1.7.0",
     "obj-multiplex": "^1.0.0",
     "obs-store": "^3.0.0",

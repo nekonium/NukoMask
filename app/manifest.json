@@ -1,7 +1,7 @@
 {
   "name": "__MSG_appName__",
   "short_name": "__MSG_appName__",
-  "version": "1.44.4",
+  "version": "1.44.5",
   "manifest_version": 2,
   "author": "https://nekonium.network",
   "description": "__MSG_appDescription__",

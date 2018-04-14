@@ -1,21 +1,29 @@
 //NukoMaskの名前空間をMetaMaskと分離するための細工
-if(typeof window.nukomask !== 'undefined'){
-  if(typeof window.nukomask.web3 !== 'undefined'){
-    throw new Error(`NukoMask detected another nukomask.web3.
+{
+  var nekonium_web3=undefined;
+  function isundef(v){return typeof v === 'undefined'}
+  if(!isundef(window.nekonium)){
+    nekonium_web3=window.nekonium;
+  }else if(!isundef(window.nukomask)){
+    nekonium_web3=window.nukomask;
+  }
+  //nukomaskが既にあるときはnekoniumの挿入を行わない。
+  if(!isundef(nekonium_web3)){
+    throw new Error(`NukoMask detected another nukomask or nekonium.
     NukoMask will not work reliably with another web3 extension.
     This usually happens if you have two NukoMasks installed,
     or MetaMask and another web3 extension. Please remove one
     and try again.`)
   }
-}
-if(typeof window.nukomask ==='undefined'){
-  window.nukomask={
-    'web3':null,
-    'log':null,
+  if(isundef(window.nekonium)){
+    window.nekonium={
+      'web3':null,
+      'log':null,
+    }
+    //互換性維持目的
+    window.nukomask=window.nekonium;
   }
-}else{
-}
-{
+
 
   /*global Web3*/
   cleanContextForImports()
@@ -35,11 +43,6 @@ if(typeof window.nukomask ==='undefined'){
 
   const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
   log.setDefaultLevel(METAMASK_DEBUG ? 'debug' : 'warn')
-  
-//  console.log('NukoMask - oldWeb3:'+old_Web3)
-//  console.log('NukoMask - newWeb3:'+new_Web3)
-
-  
   //
   // setup plugin communication
   //
@@ -68,8 +71,8 @@ if(typeof window.nukomask ==='undefined'){
   inpageProvider.publicConfigStore.subscribe(function (state) {
     web3.eth.defaultAccount = state.selectedAddress
   })
-  window.nukomask.log=log
-  window.nukomask.Web3=new_Web3
+  window.nekonium.log=log
+  window.nekonium.Web3=new_Web3
 }
 //
 // util
