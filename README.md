@@ -8,7 +8,7 @@ The function of NukoMask is almost the same as MetaMask, but the following point
 2. The currency unit is NUKO.
 3. Mascot characters are different.He is Nukoja.
 4. Some Japanese expression is optimized for Nekonium.
-5. The name space of the web3 instance is different. NukoMask inserts web3 for DApps under the window.nukomask object.
+5. The name space of the web3 instance is different. NukoMask inserts web3 for DApps under the window.nekonium object.
 
 **There is no guarantee on the quality of software, so use it at your own risk. If you lose ETH or NUKO or Others, We can not compensate at all.**
 
