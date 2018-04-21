@@ -7,7 +7,7 @@
   }else if(!isundef(window.nukomask)){
     nekonium_web3=window.nukomask;
   }
-  //nukomaskが既にあるときはnekoniumの挿入を行わない。
+  //nekoniumが既にあるときはnekoniumの挿入を行わない。
   if(!isundef(nekonium_web3)){
     throw new Error(`NukoMask detected another nukomask or nekonium.
     NukoMask will not work reliably with another web3 extension.
@@ -15,30 +15,17 @@
     or MetaMask and another web3 extension. Please remove one
     and try again.`)
   }
-  if(isundef(window.nekonium)){
-    window.nekonium={
-      'web3':null,
-      'log':null,
-    }
-    //互換性維持目的
-    window.nukomask=window.nekonium;
-  }
-
 
   /*global Web3*/
   cleanContextForImports()
-  //Web3クラスの退避
-  var old_Web3=window.Web3
-  require('web3/dist/web3.min.js')
+  //v0.20.603-alpha.1以降のnekoniumネームスペースに移動してある場合
+  require('@nekonium/web3/dist/web3.min.js')
   const log = require('loglevel')
   const LocalMessageDuplexStream = require('post-message-stream')
   // const PingStream = require('ping-pong-stream/ping')
   // const endOfStream = require('end-of-stream')
   const setupDappAutoReload = require('./lib/auto-reload.js')
   const MetamaskInpageProvider = require('./lib/inpage-provider.js')
-  //Web3クラスの復帰
-  var new_Web3=window.Web3
-  window.Web3=old_Web3
   restoreContextAfterImports()
 
   const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
@@ -58,7 +45,7 @@
   
 
   
-  var web3 = new new_Web3(inpageProvider)
+  var web3 = new nekonium.Web3(inpageProvider)
   web3.setProvider = function () {
     log.debug('NukoMask - overrode web3.setProvider')
   }
@@ -72,7 +59,6 @@
     web3.eth.defaultAccount = state.selectedAddress
   })
   window.nekonium.log=log
-  window.nekonium.Web3=new_Web3
 }
 //
 // util

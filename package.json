@@ -61,6 +61,7 @@
     ]
   },
   "dependencies": {
+    "@nekonium/web3": "^0.20.603-alpha.1",
     "abi-decoder": "^1.0.9",
     "asmcrypto.js": "0.22.0",
     "async": "^2.5.0",
@@ -182,7 +183,6 @@
     "through2": "^2.0.3",
     "valid-url": "^1.0.9",
     "vreme": "^3.0.2",
-    "web3": "^0.20.1",
     "web3-provider-engine": "^13.5.6",
     "web3-stream-provider": "^3.0.1",
     "xtend": "^4.0.1"

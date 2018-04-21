@@ -6,7 +6,7 @@ function setupDappAutoReload (web3, observable) {
   let reloadInProgress = false
   let lastTimeUsed
   let lastSeenNetwork
-  global.nukomask.web3 = new Proxy(web3, {
+  global.nekonium.web3 = new Proxy(web3, {
     get: (_web3, key) => {
       // show warning once on web3 access
       if (!hasBeenWarned && key !== 'currentProvider') {
