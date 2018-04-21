@@ -14,12 +14,21 @@ The function of NukoMask is almost the same as MetaMask, but the following point
 
 ## how to access injected web3
 ```bash
+  const Web3 = require("@nekonium/web3");
+  var web3=undefined;
+  if(typeof window.nekonium !== 'undefined'){
+      web3=new Web3(window.nekonium.web3.currentProvider);
+  }
+```
+or
+```bash
   const Web3 = require("web3");
   var web3=undefined;
   if(typeof window.nekonium !== 'undefined'){
       web3=new Web3(window.nekonium.web3.currentProvider);
   }
 ```
+In case of using standard Web3, Nekonium's currency unit can not be used.
 
 ## Support
 Visit our Discord channel #NukoMask https://discord.gg/C8mJg44
