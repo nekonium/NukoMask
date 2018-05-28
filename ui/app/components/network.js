@@ -1,11 +1,17 @@
 const Component = require('react').Component
+const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
+const connect = require('react-redux').connect
 const classnames = require('classnames')
 const inherits = require('util').inherits
 const NetworkDropdownIcon = require('./dropdowns/components/network-dropdown-icon')
-const t = require('../../i18n')
 
-module.exports = Network
+Network.contextTypes = {
+  t: PropTypes.func,
+}
+
+module.exports = connect()(Network)
+
 
 inherits(Network, Component)
 
@@ -15,6 +21,7 @@ function Network () {
 
 Network.prototype.render = function () {
   const props = this.props
+  const context = this.context
   const networkNumber = props.network
   let providerName
   try {
@@ -34,7 +41,7 @@ Network.prototype.render = function () {
       onClick: (event) => this.props.onClick(event),
     }, [
       h('img', {
-        title: t('attemptingConnect'),
+        title: context.t('attemptingConnect'),
         style: {
           width: '27px',
         },
@@ -42,10 +49,10 @@ Network.prototype.render = function () {
       }),
     ])
   } else if (providerName === 'mainnet') {
-    hoverText = t('mainnet')
+    hoverText = context.t('mainnet')
     iconName = 'ethereum-network'
   } else {
-    hoverText = t('unknownNetwork')
+    hoverText = context.t('unknownNetwork')
     iconName = 'unknown-private-network'
   }
 
@@ -73,7 +80,7 @@ Network.prototype.render = function () {
                 backgroundColor: '#038789', // $blue-lagoon
                 nonSelectBackgroundColor: '#15afb2',
               }),
-              h('.network-name', t('mainnet')),
+              h('.network-name', context.t('mainnet')),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
 
@@ -86,7 +93,7 @@ Network.prototype.render = function () {
                 },
               }),
 
-              h('.network-name', t('privateNetwork')),
+              h('.network-name', context.t('privateNetwork')),
               h('i.fa.fa-chevron-down.fa-lg.network-caret'),
             ])
         }

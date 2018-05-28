@@ -1,4 +1,5 @@
 const Component = require('react').Component
+const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
 const inherits = require('util').inherits
 const connect = require('react-redux').connect
@@ -6,8 +7,8 @@ const actions = require('../../actions')
 const Dropdown = require('./components/dropdown').Dropdown
 const DropdownMenuItem = require('./components/dropdown').DropdownMenuItem
 const NetworkDropdownIcon = require('./components/network-dropdown-icon')
-const t = require('../../../i18n')
 const R = require('ramda')
+
 
 // classes from nodes of the toggle element.
 const notToggleElementClassnames = [
@@ -54,7 +55,12 @@ function NetworkDropdown () {
   Component.call(this)
 }
 
+NetworkDropdown.contextTypes = {
+  t: PropTypes.func,
+}
+
 module.exports = connect(mapStateToProps, mapDispatchToProps)(NetworkDropdown)
+
 
 // TODO: specify default props and proptypes
 NetworkDropdown.prototype.render = function () {
@@ -94,13 +100,13 @@ NetworkDropdown.prototype.render = function () {
   }, [
 
     h('div.network-dropdown-header', {}, [
-      h('div.network-dropdown-title', {}, t('networks')),
+      h('div.network-dropdown-title', {}, this.context.t('networks')),
 
       h('div.network-dropdown-divider'),
 
       h('div.network-dropdown-content',
         {},
-        t('defaultNetwork')
+        this.context.t('defaultNetwork')
       ),
     ]),
 
@@ -122,7 +128,7 @@ NetworkDropdown.prototype.render = function () {
           style: {
             color: providerType === 'mainnet' ? '#ffffff' : '#9b9b9b',
           },
-        }, t('mainnet')),
+        }, this.context.t('mainnet')),
       ]
     ),
 
@@ -148,7 +154,7 @@ NetworkDropdown.prototype.render = function () {
           style: {
             color: activeNetwork === 'http://localhost:8293' ? '#ffffff' : '#9b9b9b',
           },
-        }, t('localhost')),
+        }, this.context.t('localhost')),
       ]
     ),
 
@@ -172,7 +178,7 @@ NetworkDropdown.prototype.render = function () {
           style: {
             color: activeNetwork === 'custom' ? '#ffffff' : '#9b9b9b',
           },
-        }, t('customRPC')),
+        }, this.context.t('customRPC')),
       ]
     ),
 
@@ -187,9 +193,9 @@ NetworkDropdown.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = t('mainnet')
+    name = this.context.t('mainnet')
   } else {
-    name = t('unknownNetwork')
+    name = this.context.t('unknownNetwork')
   }
 
   return name

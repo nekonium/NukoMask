@@ -6,12 +6,28 @@ workflows:
     jobs:
       - prep-deps-npm
       - prep-deps-firefox
+      - prep-build:
+          requires:
+            - prep-deps-npm
       - prep-scss:
           requires:
             - prep-deps-npm
       - test-lint:
           requires:
             - prep-deps-npm
+      - test-e2e:
+          requires:
+            - prep-deps-npm
+            - prep-build
+      - job-screens:
+          requires:
+            - prep-deps-npm
+            - prep-build
+      - job-announce:
+          requires:
+            - prep-deps-npm
+            - prep-build
+            - job-screens
       - test-unit:
           requires:
             - prep-deps-npm
@@ -33,6 +49,16 @@ workflows:
             - prep-deps-npm
             - prep-deps-firefox
             - prep-scss
+      - all-tests-pass:
+          requires:
+            - test-lint
+            - test-unit
+            - test-e2e
+            - job-screens
+            - test-integration-mascara-chrome
+            - test-integration-mascara-firefox
+            - test-integration-flat-chrome
+            - test-integration-flat-firefox
 
 jobs:
   prep-deps-npm:
@@ -65,6 +91,24 @@ jobs:
           paths:
             - firefox
 
+  prep-build:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: build:dist
+          command: npm run dist
+      - run:
+          name: build:debug
+          command: find dist/ -type f -exec md5sum {} \; | sort -k 2
+      - save_cache:
+          key: build-cache-{{ .Revision }}
+          paths:
+            - dist
+            - builds
 
   prep-scss:
     docker:
@@ -95,6 +139,63 @@ jobs:
       - run:
           name: Test
           command: npm run lint
+
+  test-e2e:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          key: build-cache-{{ .Revision }}
+      - run:
+          name: Test
+          command: npm run test:e2e
+      - store_artifacts:
+          path: test-artifacts
+          destination: test-artifacts
+
+  job-screens:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          key: build-cache-{{ .Revision }}
+      - run:
+          name: Test
+          command: npm run test:screens
+      - save_cache:
+          key: job-screens-{{ .Revision }}
+          paths:
+            - test-artifacts
+
+  job-announce:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+      - restore_cache:
+          key: build-cache-{{ .Revision }}
+      - restore_cache:
+          key: job-screens-{{ .Revision }}
+      - store_artifacts:
+          path: dist/mascara
+          destination: builds/mascara
+      - store_artifacts:
+          path: builds
+          destination: builds
+      - store_artifacts:
+          path: test-artifacts
+          destination: test-artifacts
+      - run:
+          name: build:announce
+          command: ./development/metamaskbot-build-announce.js
 
   test-unit:
     docker:
@@ -200,3 +301,11 @@ jobs:
       - run:
           name: test:integration:mascara
           command: npm run test:mascara
+
+  all-tests-pass:
+    docker:
+      - image: circleci/node:8-browsers
+    steps:
+      - run:
+          name: All Tests Passed
+          command: echo 'weew - everything passed!'

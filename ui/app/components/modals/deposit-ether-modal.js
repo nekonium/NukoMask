@@ -1,22 +1,19 @@
 const Component = require('react').Component
+const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
 const inherits = require('util').inherits
 const connect = require('react-redux').connect
 const actions = require('../../actions')
 const networkNames = require('../../../../app/scripts/config.js').networkNames
 const ShapeshiftForm = require('../shapeshift-form')
-const t = require('../../../i18n')
 
-const DIRECT_DEPOSIT_ROW_TITLE = t('directDepositEther')
-const DIRECT_DEPOSIT_ROW_TEXT = t('directDepositEtherExplainer')
-const COINBASE_ROW_TITLE = t('buyCoinbase')
-const COINBASE_ROW_TEXT = t('buyCoinbaseExplainer')
-const SHAPESHIFT_ROW_TITLE = t('depositShapeShift')
-const SHAPESHIFT_ROW_TEXT = t('depositShapeShiftExplainer')
-const FAUCET_ROW_TITLE = t('testFaucet')
-const facuetRowText = (networkName) => {
-  return t('getEtherFromFaucet', [networkName])
-}
+let DIRECT_DEPOSIT_ROW_TITLE
+let DIRECT_DEPOSIT_ROW_TEXT
+let COINBASE_ROW_TITLE
+let COINBASE_ROW_TEXT
+let SHAPESHIFT_ROW_TITLE
+let SHAPESHIFT_ROW_TEXT
+let FAUCET_ROW_TITLE
 
 function mapStateToProps (state) {
   return {
@@ -44,15 +41,33 @@ function mapDispatchToProps (dispatch) {
 }
 
 inherits(DepositEtherModal, Component)
-function DepositEtherModal () {
+function DepositEtherModal (props, context) {
   Component.call(this)
+
+  // need to set after i18n locale has loaded
+  DIRECT_DEPOSIT_ROW_TITLE = context.t('directDepositEther')
+  DIRECT_DEPOSIT_ROW_TEXT = context.t('directDepositEtherExplainer')
+  COINBASE_ROW_TITLE = context.t('buyCoinbase')
+  COINBASE_ROW_TEXT = context.t('buyCoinbaseExplainer')
+  SHAPESHIFT_ROW_TITLE = context.t('depositShapeShift')
+  SHAPESHIFT_ROW_TEXT = context.t('depositShapeShiftExplainer')
+  FAUCET_ROW_TITLE = context.t('testFaucet')
 
   this.state = {
     buyingWithShapeshift: false,
   }
 }
 
+DepositEtherModal.contextTypes = {
+  t: PropTypes.func,
+}
+
 module.exports = connect(mapStateToProps, mapDispatchToProps)(DepositEtherModal)
+
+
+DepositEtherModal.prototype.facuetRowText = function (networkName) {
+  return this.context.t('getEtherFromFaucet', [networkName])
+}
 
 DepositEtherModal.prototype.renderRow = function ({
   logo,
@@ -115,10 +130,10 @@ DepositEtherModal.prototype.render = function () {
 
     h('div.page-container__header', [
 
-      h('div.page-container__title', [t('depositEther')]),
+      h('div.page-container__title', [this.context.t('depositEther')]),
 
       h('div.page-container__subtitle', [
-        t('needEtherInWallet'),
+        this.context.t('needEtherInWallet'),
       ]),
 
       h('div.page-container__header-close', {

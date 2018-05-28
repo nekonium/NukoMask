@@ -1,17 +1,22 @@
 const inherits = require('util').inherits
 const Component = require('react').Component
+const PropTypes = require('prop-types')
 const h = require('react-hyperscript')
 const connect = require('react-redux').connect
 const actions = require('./actions')
 const getCaretCoordinates = require('textarea-caret')
 const EventEmitter = require('events').EventEmitter
-const t = require('../i18n')
 const { OLD_UI_NETWORK_TYPE } = require('../../app/scripts/config').enums
 const environmentType = require('../../app/scripts/lib/environment-type')
 
 const Mascot = require('./components/mascot')
 
+UnlockScreen.contextTypes = {
+  t: PropTypes.func,
+}
+
 module.exports = connect(mapStateToProps)(UnlockScreen)
+
 
 inherits(UnlockScreen, Component)
 function UnlockScreen () {
@@ -42,16 +47,6 @@ UnlockScreen.prototype.render = function () {
         src: "/images/nukoja_green.png",
       }, ),
 
-/*
-        ,
-        h('h1', {
-          style: {
-            fontSize: '1.4em',
-            textTransform: 'uppercase',
-            color: '#7F8082',
-          },
-        }, 'NukoMask'),*/
-
       h('input.large-input', {
         type: 'password',
         id: 'password-box',
@@ -76,7 +71,7 @@ UnlockScreen.prototype.render = function () {
         style: {
           margin: 10,
         },
-      }, t('login')),
+      }, this.context.t('login')),
 
       h('p.pointer', {
         onClick: () => {
@@ -90,7 +85,7 @@ UnlockScreen.prototype.render = function () {
           color: 'rgb(247, 134, 28)',
           textDecoration: 'underline',
         },
-      }, t('restoreFromSeed')),
+      }, this.context.t('restoreFromSeed')),
 
       h('p.pointer', {
         onClick: () => {
@@ -103,7 +98,7 @@ UnlockScreen.prototype.render = function () {
           textDecoration: 'underline',
           marginTop: '32px',
         },
-      }, t('classicInterface')),
+      }, this.context.t('classicInterface')),
     ])
   )
 }

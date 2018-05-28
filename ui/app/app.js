@@ -2,9 +2,9 @@ const inherits = require('util').inherits
 const Component = require('react').Component
 const connect = require('react-redux').connect
 const h = require('react-hyperscript')
+const PropTypes = require('prop-types')
 const actions = require('./actions')
 const classnames = require('classnames')
-const t = require('../i18n')
 
 // mascara
 const MascaraFirstTime = require('../../mascara/src/app/first-time').default
@@ -46,7 +46,12 @@ const QrView = require('./components/qr-code')
 // Global Modals
 const Modal = require('./components/modals/index').Modal
 
+App.contextTypes = {
+  t: PropTypes.func,
+}
+
 module.exports = connect(mapStateToProps, mapDispatchToProps)(App)
+
 
 inherits(App, Component)
 function App () { Component.call(this) }
@@ -294,8 +299,8 @@ App.prototype.renderAppBar = function () {
 
             // metamask name
             h('.flex-row', [
-              h('h1', t('appName')),
-              h('div.beta-label', t('beta')),
+              h('h1', this.context.t('appName')),
+              h('div.beta-label', this.context.t('beta')),
             ]),
           ]),
 
@@ -557,9 +562,9 @@ App.prototype.getConnectingLabel = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = t('connectingToMainnet')
+    name = this.context.t('connectingToMainnet')
   } else {
-    name = t('connectingToUnknown')
+    name = this.context.t('connectingToUnknown')
   }
 
   return name
@@ -572,9 +577,9 @@ App.prototype.getNetworkName = function () {
   let name
 
   if (providerName === 'mainnet') {
-    name = t('mainnet')
+    name = this.context.t('mainnet')
   } else {
-    name = t('unknownNetwork')
+    name = this.context.t('unknownNetwork')
   }
 
   return name
