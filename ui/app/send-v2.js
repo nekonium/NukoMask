@@ -30,6 +30,7 @@ const {
   getGasTotal,
 } = require('./components/send/send-utils')
 const { isValidAddress } = require('./util')
+const { CONFIRM_TRANSACTION_ROUTE, DEFAULT_ROUTE } = require('./routes')
 
 SendTransactionScreen.contextTypes = {
   t: PropTypes.func,
@@ -87,17 +88,6 @@ SendTransactionScreen.prototype.updateSendTokenBalance = function (usersToken) {
 }
 
 SendTransactionScreen.prototype.componentWillMount = function () {
-  const {
-    updateTokenExchangeRate,
-    selectedToken = {},
-  } = this.props
-
-  const { symbol } = selectedToken || {}
-
-  if (symbol) {
-    updateTokenExchangeRate(symbol)
-  }
-
   this.updateGas()
 }
 
@@ -182,7 +172,7 @@ SendTransactionScreen.prototype.componentDidUpdate = function (prevProps) {
 }
 
 SendTransactionScreen.prototype.renderHeader = function () {
-  const { selectedToken, clearSend, goHome } = this.props
+  const { selectedToken, clearSend, history } = this.props
   const tokenText = selectedToken ? 'tokens' : 'NUKO'
 
   return h('div.page-container__header', [
@@ -194,7 +184,7 @@ SendTransactionScreen.prototype.renderHeader = function () {
     h('div.page-container__header-close', {
       onClick: () => {
         clearSend()
-        goHome()
+        history.push(DEFAULT_ROUTE)
       },
     }),
 
@@ -234,7 +224,7 @@ SendTransactionScreen.prototype.renderFromRow = function () {
 
   return h('div.send-v2__form-row', [
 
-    h('div.send-v2__form-label', t('from')),
+    h('div.send-v2__form-label', this.context.t('from')),
 
     h('div.send-v2__form-field', [
       h(FromDropdown, {
@@ -406,7 +396,7 @@ SendTransactionScreen.prototype.renderAmountRow = function () {
   return h('div.send-v2__form-row', [
 
     h('div.send-v2__form-label', [
-      t('amount'),
+      this.context.t('amount'),
       this.renderErrorMessage('amount'),
       !errors.amount && gasTotal && h('div.send-v2__amount-max', {
         onClick: (event) => {
@@ -496,22 +486,22 @@ SendTransactionScreen.prototype.renderForm = function () {
 
 SendTransactionScreen.prototype.renderFooter = function () {
   const {
-    goHome,
     clearSend,
     gasTotal,
     tokenBalance,
     selectedToken,
     errors: { amount: amountError, to: toError },
+    history,
   } = this.props
 
-  const missingTokenBalance = selectedToken && !tokenBalance
+  const missingTokenBalance = selectedToken && (tokenBalance === null || tokenBalance === undefined)
   const noErrors = !amountError && toError === null
 
   return h('div.page-container__footer', [
     h('button.btn-secondary--lg.page-container__footer-button', {
       onClick: () => {
         clearSend()
-        goHome()
+        history.push(DEFAULT_ROUTE)
       },
     }, this.context.t('cancel')),
     h('button.btn-primary--lg.page-container__footer-button', {
@@ -622,7 +612,6 @@ SendTransactionScreen.prototype.onSubmit = function (event) {
 
   if (editingTransactionId) {
     const editedTx = this.getEditedTx()
-
     updateTx(editedTx)
   } else {
 
@@ -646,4 +635,6 @@ SendTransactionScreen.prototype.onSubmit = function (event) {
       ? signTokenTx(selectedToken.address, to, amount, txParams)
       : signTx(txParams)
   }
+
+  this.props.history.push(CONFIRM_TRANSACTION_ROUTE)
 }

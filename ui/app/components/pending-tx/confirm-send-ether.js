@@ -1,4 +1,6 @@
 const Component = require('react').Component
+const { withRouter } = require('react-router-dom')
+const { compose } = require('recompose')
 const PropTypes = require('prop-types')
 const connect = require('react-redux').connect
 const h = require('react-hyperscript')
@@ -21,14 +23,20 @@ const {
 const GasFeeDisplay = require('../send/gas-fee-display-v2')
 const SenderToRecipient = require('../sender-to-recipient')
 const NetworkDisplay = require('../network-display')
+const currencyFormatter = require('currency-formatter')
+const currencies = require('currency-formatter/currencies')
 
 const { MIN_GAS_PRICE_HEX } = require('../send/send-constants')
+const { SEND_ROUTE, DEFAULT_ROUTE } = require('../../routes')
 
 ConfirmSendEther.contextTypes = {
   t: PropTypes.func,
 }
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(ConfirmSendEther)
+module.exports = compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+)(ConfirmSendEther)
 
 
 function mapStateToProps (state) {
@@ -72,7 +80,6 @@ function mapDispatchToProps (dispatch) {
         errors: { to: null, amount: null },
         editingTransactionId: id,
       }))
-      dispatch(actions.showSendPage())
     },
     cancelTransaction: ({ id }) => dispatch(actions.cancelTx({ id })),
     showCustomizeGasModal: (txMeta, sendGasLimit, sendGasPrice, sendGasTotal) => {
@@ -270,9 +277,24 @@ ConfirmSendEther.prototype.getData = function () {
   }
 }
 
+ConfirmSendEther.prototype.convertToRenderableCurrency = function (value, currencyCode) {
+  const upperCaseCurrencyCode = currencyCode.toUpperCase()
+
+  return currencies.find(currency => currency.code === upperCaseCurrencyCode)
+    ? currencyFormatter.format(Number(value), {
+      code: upperCaseCurrencyCode,
+    })
+    : value
+}
+
+ConfirmSendEther.prototype.editTransaction = function (txMeta) {
+  const { editTransaction, history } = this.props
+  editTransaction(txMeta)
+  history.push(SEND_ROUTE)
+}
+
 ConfirmSendEther.prototype.render = function () {
   const {
-    editTransaction,
     currentCurrency,
     clearSend,
     conversionRate,
@@ -310,6 +332,9 @@ ConfirmSendEther.prototype.render = function () {
     ? 'Increase your gas fee to attempt to overwrite and speed up your transaction'
     : t('pleaseReviewTransaction')
 
+  const convertedAmountInFiat = this.convertToRenderableCurrency(amountInFIAT, currentCurrency)
+  const convertedTotalInFiat = this.convertToRenderableCurrency(totalInFIAT, currentCurrency)
+
   // This is from the latest master
   // It handles some of the errors that we are not currently handling
   // Leaving as comments fo reference
@@ -329,7 +354,7 @@ ConfirmSendEther.prototype.render = function () {
       h('.page-container__header', [
         h('.page-container__header-row', [
           h('span.page-container__back-button', {
-            onClick: () => editTransaction(txMeta),
+            onClick: () => this.editTransaction(txMeta),
             style: {
               visibility: !txMeta.lastGasPrice ? 'initial' : 'hidden',
             },
@@ -507,7 +532,9 @@ ConfirmSendEther.prototype.render = function () {
           }, this.context.t('cancel')),
 
           // Accept Button
-          h('button.btn-confirm.page-container__footer-button.allcaps', [this.context.t('confirm')]),
+          h('button.btn-confirm.page-container__footer-button.allcaps', {
+            onClick: event => this.onSubmit(event),
+          }, this.context.t('confirm')),
         ]),
       ]),
     ])
@@ -545,6 +572,7 @@ ConfirmSendEther.prototype.cancel = function (event, txMeta) {
   const { cancelTransaction } = this.props
 
   cancelTransaction(txMeta)
+    .then(() => this.props.history.push(DEFAULT_ROUTE))
 }
 
 ConfirmSendEther.prototype.isBalanceSufficient = function (txMeta) {

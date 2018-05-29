@@ -1,4 +1,4 @@
-//NukoMaskã®åå‰ç©ºé–“ã‚’MetaMaskã¨åˆ†é›¢ã™ã‚‹ãŸã‚ã®ç´°å·¥
+//NukoMask‚Ì–¼‘O‹óŠÔ‚ğMetaMask‚Æ•ª—£‚·‚é‚½‚ß‚Ì×H
 {
   var nekonium_web3=undefined;
   function isundef(v){return typeof v === 'undefined'}
@@ -7,7 +7,7 @@
   }else if(!isundef(window.nukomask)){
     nekonium_web3=window.nukomask;
   }
-  //nekoniumãŒæ—¢ã«ã‚ã‚‹ã¨ãã¯nekoniumã®æŒ¿å…¥ã‚’è¡Œã‚ãªã„ã€‚
+  //nekonium‚ªŠù‚É‚ ‚é‚Æ‚«‚Ínekonium‚Ì‘}“ü‚ğs‚í‚È‚¢B
   if(!isundef(nekonium_web3)){
     throw new Error(`NukoMask detected another nukomask or nekonium.
     NukoMask will not work reliably with another web3 extension.
@@ -18,7 +18,7 @@
 
   /*global Web3*/
   cleanContextForImports()
-  //v0.20.603-alpha.1ä»¥é™ã®nekoniumãƒãƒ¼ãƒ ã‚¹ãƒšãƒ¼ã‚¹ã«ç§»å‹•ã—ã¦ã‚ã‚‹å ´åˆ
+  //v0.20.603-alpha.1ˆÈ~‚Ìnekoniumƒl[ƒ€ƒXƒy[ƒX‚ÉˆÚ“®‚µ‚Ä‚ ‚éê‡
   require('@nekonium/web3/dist/web3.min.js')
   const log = require('loglevel')
   const LocalMessageDuplexStream = require('post-message-stream')
@@ -60,15 +60,16 @@
   })
   window.nekonium.log=log
 }
-//
-// util
-//
-
 // need to make sure we aren't affected by overlapping namespaces
 // and that we dont affect the app with our namespace
 // mostly a fix for web3's BigNumber if AMD's "define" is defined...
 var __define
 
+/**
+ * Caches reference to global define object and deletes it to
+ * avoid conflicts with other global define objects, such as
+ * AMD's define function
+ */
 function cleanContextForImports () {
   __define = global.define
   try {
@@ -78,6 +79,9 @@ function cleanContextForImports () {
   }
 }
 
+/**
+ * Restores global define object from cached reference
+ */
 function restoreContextAfterImports () {
   try {
     global.define = __define

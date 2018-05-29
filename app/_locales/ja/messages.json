@@ -22,7 +22,7 @@
   },
   "addTokens": {
     "message": "トークンを追加"
-  },  
+  },
   "amount": {
     "message": "総額"
   },
@@ -50,7 +50,7 @@
     "message": "残高:"
   },
   "balances": {
-    "message": "あなたの残高"
+    "message": "トークン残高"
   },
   "balanceIsInsufficientGas": {
     "message": "現在のガス総量に対して残高が不足しています"
@@ -69,10 +69,10 @@
     "message": "購入"
   },
   "buyCoinbase": {
-    "message": "Coinbaseで購入"
+    "message": "Coinbaseのサイトで購入"
   },
   "buyCoinbaseExplainer": {
-    "message": "Coinbaseは、世界的なBitcoin、Ethereum、そしてLitecoinの取引所です。"
+    "message": "Etherを購入できます。Coinbaseは、世界的なBitcoin、Ethereum、そしてLitecoinの取引所です。"
   },
   "cancel": {
     "message": "キャンセル"
@@ -96,7 +96,7 @@
     "message": "トランザクションの確認"
   },
   "continueToCoinbase": {
-    "message": "Coinbaseで続行"
+    "message": "Coinbaseを開く"
   },
   "contractDeployment": {
     "message": "コントラクトのデプロイ"
@@ -163,13 +163,13 @@
     "message": "DENとは、あなたのパスワードが暗号化されたNukoMask内のストレージです。"
   },
   "deposit": {
-    "message": "受取り"
+    "message": "振込"
   },
   "depositBTC": {
-    "message": "あなたのBTCを次のアドレスへデポジット:"
+    "message": "BTCを下記のアドレスへ振込んでください:"
   },
   "depositCoin": {
-    "message": "あなたの $1を次のアドレスへデポジット",
+    "message": "$1を下記のアドレスへ振込んでください",
     "description": "Tells the user what coin they have selected to deposit with shapeshift"
   },
   "depositEth": {
@@ -185,7 +185,7 @@
     "message": "別のアカウントから入金"
   },
   "depositShapeShift": {
-    "message": "ShapeShiftで入金"
+    "message": "ShapeShiftで交換"
   },
   "depositShapeShiftExplainer": {
     "message": "他の暗号通貨をNukoと交換してNukoMaskのウォレットへ入金できます。アカウント作成は不要です。"
@@ -296,7 +296,7 @@
     "message": "トークンを隠す"
   },
   "hideTokenPrompt": {
-    "message": "トークンを隠しますか？?"
+    "message": "トークンを隠しますか?"
   },
   "howToDeposit": {
     "message": "どのようにNUKOをデポジットしますか?"
@@ -432,7 +432,7 @@
     "message": "この名前にはアドレスが設定されていません。"
   },
   "noDeposits": {
-    "message": "デポジットがありません。"
+    "message": "振込みがありません。"
   },
   "noTransactionHistory": {
     "message": "トランザクション履歴がありません。"
@@ -466,7 +466,7 @@
     "description": "For importing an account from a private key"
   },
   "pasteSeed": {
-    "message": "シードをここにペーストして下さい!"
+    "message": "パスフレーズをここにペーストして下さい!"
   },
   "pleaseReviewTransaction": {
     "message": "送信内容を確認して下さい。"
@@ -494,13 +494,13 @@
     "message": "もっと読む"
   },
   "receive": {
-    "message": "受け取る"
+    "message": "受取"
   },
   "recipientAddress": {
     "message": "受取人アドレス"
   },
   "refundAddress": {
-    "message": "あなたの返金先アドレス"
+    "message": "受取アドレス"
   },
   "rejected": {
     "message": "拒否されました"
@@ -511,11 +511,17 @@
   "restoreFromSeed": {
     "message": "パスフレーズから復元する"
   },
+  "restoreVault": {
+    "message": "ウォレットを復元する"
+  },
   "required": {
     "message": "必要です。"
   },
   "retryWithMoreGas": {
     "message": "より高いガスプライスで再度試して下さい。"
+  },
+  "walletSeed": {
+    "message": "ウォレットのパスフレーズ"
   },
   "revealSeedWords": {
     "message": "パスフレーズを表示"
@@ -543,6 +549,9 @@
   "selectService": {
     "message": "サービスを選択"
   },
+  "selectType": {
+    "message": "キーの種類"
+  },
   "send": {
     "message": "送信"
   },
@@ -564,8 +573,11 @@
   "settings": {
     "message": "設定"
   },
+  "info": {
+    "message": "情報"
+    },
   "shapeshiftBuy": {
-    "message": "Shapeshiftで買う"
+    "message": "Shapeshiftで交換"
   },
   "showPrivateKeys": {
     "message": "秘密鍵を表示"
@@ -595,7 +607,7 @@
     "message": "送信"
   },
   "takesTooLong": {
-    "message": "長時間かかりますか?"
+    "message": "送信に時間がかかりますか?"
   },
   "testFaucet": {
     "message": "Faucetをテスト"
@@ -624,6 +636,9 @@
   },
   "total": {
     "message": "合計"
+  },
+  "transactions": {
+    "message": "トランザクション"
   },
   "transactionMemo": {
     "message": "トランザクションメモ (オプション)"
