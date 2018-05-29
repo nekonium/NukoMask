@@ -20,9 +20,10 @@ const reportFailedTxToSentry = require('./lib/reportFailedTxToSentry')
 const setupMetamaskMeshMetrics = require('./lib/setupMetamaskMeshMetrics')
 const EdgeEncryptor = require('./edge-encryptor')
 const getFirstPreferredLangCode = require('./lib/get-first-preferred-lang-code')
+const getObjStructure = require('./lib/getObjStructure')
 
 const STORAGE_KEY = 'nukomask-config'
-const METAMASK_DEBUG = 'GULP_METAMASK_DEBUG'
+const METAMASK_DEBUG = process.env.METAMASK_DEBUG
 
 window.log = log
 log.setDefaultLevel(METAMASK_DEBUG ? 'debug' : 'warn')
@@ -77,6 +78,16 @@ async function loadStateFromPersistence () {
                   diskStore.getState() ||
                   migrator.generateInitialState(firstTimeState)
 
+  // report migration errors to sentry
+  migrator.on('error', (err) => {
+    // get vault structure without secrets
+    const vaultStructure = getObjStructure(versionedData)
+    raven.captureException(err, {
+      // "extra" key is required by Sentry
+      extra: { vaultStructure },
+    })
+  })
+
   // migrate data
   versionedData = await migrator.migrateData(versionedData)
   if (!versionedData) {
@@ -84,7 +95,14 @@ async function loadStateFromPersistence () {
   }
 
   // write to disk
-  if (localStore.isSupported) localStore.set(versionedData)
+  if (localStore.isSupported) {
+    localStore.set(versionedData)
+  } else {
+    // throw in setTimeout so as to not block boot
+    setTimeout(() => {
+      throw new Error('MetaMask - Localstore not supported')
+    })
+  }
 
   // return just the data
   return versionedData.data
@@ -94,7 +112,7 @@ function setupController (initState, initLangCode) {
   //
   // MetaMask Controller
   //
-  
+
   const controller = new MetamaskController({
     // User confirmation callbacks:
     showUnconfirmedMessage: triggerUi,

@@ -43,24 +43,22 @@ class CurrencyController {
     this.store.updateState({ conversionDate })
   }
 
-  updateConversionRate () {
-    const currentCurrency = this.getCurrentCurrency()
-//    return fetch(`https://api.infura.io/v1/ticker/eth${currentCurrency.toLowerCase()}`)
-    return fetch(`https://api.coinmarketcap.com/v1/ticker/nekonium/?convert=${currentCurrency.toLowerCase()}`)
-    .then(response => response.json())
-    .then((parsedResponse) => {
+  async updateConversionRate () {
+    let currentCurrency
+    try {
+      currentCurrency = this.getCurrentCurrency()
+      const response = await fetch(`https://api.coinmarketcap.com/v1/ticker/nekonium/?convert=${currentCurrency.toLowerCase()}`)
+      const parsedResponse = await response.json()
       console.log(parsedResponse)
       console.log(parsedResponse[0])
       console.log(parsedResponse[0].last_updated)
       this.setConversionRate(Number(parsedResponse[0]["price_"+currentCurrency.toLowerCase()]))
       this.setConversionDate(Number(parsedResponse[0].last_updated))
-    }).catch((err) => {
-      if (err) {
-        console.warn('NukoMask - Failed to query currency conversion.')
-        this.setConversionRate(0)
-        this.setConversionDate('N/A')
-      }
-    })
+    } catch (err) {
+      log.warn(`MetaMask - Failed to query currency conversion:`, currentCurrency, err)
+      this.setConversionRate(0)
+      this.setConversionDate('N/A')
+    }
   }
 
   scheduleConversionInterval () {
