@@ -14,15 +14,10 @@ const LOCALHOST = 'localhost'
 const MAINNET_DISPLAY_NAME = 'Main Nekonium Network'
 
 const MAINNET_RPC_URL = 'https://ssl.nekonium.site:8293/'
-// const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
-// const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
-// const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
 const LOCALHOST_RPC_URL = 'http://localhost:8293'
 
 const MAINNET_RPC_URL_BETA = 'https://ssl.nekonium.site:8293/'
-// const ROPSTEN_RPC_URL_BETA = 'https://ropsten.infura.io/metamask2'
-// const KOVAN_RPC_URL_BETA = 'https://kovan.infura.io/metamask2'
-// const RINKEBY_RPC_URL_BETA = 'https://rinkeby.infura.io/metamask2'
+
 
 const DEFAULT_NETWORK = 'mainnet'
 const OLD_UI_NETWORK_TYPE = 'network'
