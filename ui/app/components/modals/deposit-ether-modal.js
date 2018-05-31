@@ -114,6 +114,7 @@ DepositEtherModal.prototype.renderRow = function ({
           onClick: onButtonClick,
         }, [buttonLabel]),
       ]),
+      innerHtml && h('', [innerHtml]),
   ])
 }
 
@@ -150,7 +151,7 @@ DepositEtherModal.prototype.render = function () {
         logo: h('img.deposit-ether-modal__buy-row__eth-logo', { src: '../../../images/3_64.png' }),
         title: DIRECT_DEPOSIT_ROW_TITLE,
         text: DIRECT_DEPOSIT_ROW_TEXT,
-        buttonLabel: t('viewAccount'),
+        buttonLabel: this.context.t('viewAccount'),
         onButtonClick: () => this.goToAccountDetailsModal(),
         hide: buyingWithShapeshift,
       }),
@@ -158,7 +159,7 @@ DepositEtherModal.prototype.render = function () {
       this.renderRow({
         logo: h('i.fa.fa-tint.fa-2x'),
         title: FAUCET_ROW_TITLE,
-        text: facuetRowText(networkName),
+        text: this.facuetRowText(networkName),
         buttonLabel: 'Get Nekonium',
         onButtonClick: () => toFaucet(network),
         hide: buyingWithShapeshift,

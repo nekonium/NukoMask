@@ -19,7 +19,7 @@ function bundleCss () {
     var fileContent = cssFiles[fileName]
     var output = String()
 
-    output += '//========== ' + fileName + ' ==========//\n\n'
+    output += '/*========== ' + fileName + ' ==========*/\n\n'
     output += fileContent
     output += '\n\n'
 

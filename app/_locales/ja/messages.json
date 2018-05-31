@@ -23,6 +23,9 @@
   "addTokens": {
     "message": "トークンを追加"
   },
+  "addAcquiredTokens": {
+    "message": "Metamaskに対応したトークンを追加できます。"
+  },
   "amount": {
     "message": "総額"
   },
@@ -157,7 +160,7 @@
     "message": "小数点桁数"
   }, 
   "defaultNetwork": {
-    "message": "デフォルトのNekonium送受信ネットワークはメインネットです。"
+    "message": "デフォルトのNekoniumネットワークはメインネットです。"
   },
   "denExplainer": {
     "message": "DENとは、あなたのパスワードが暗号化されたNukoMask内のストレージです。"
@@ -217,6 +220,18 @@
   "enterPassword": {
     "message": "パスワードを入力"
   },
+  "enterPasswordConfirm": {
+    "message": "確認のためパスワードを入力してください"
+  },
+  "enterPasswordContinue": {
+    "message": "続けるにはパスワードを入力してください"
+  },
+  "passwordNotLongEnough": {
+    "message": "パスワードの長さが不十分です"
+  },
+  "passwordsDontMatch": {
+    "message": "パスワードが一致しません"
+  },
   "etherscanView": {
     "message": "ブロックエクスプローラ"
   },
@@ -257,7 +272,7 @@
     "message": "ガスリミット"
   },
   "gasLimitCalculation": {
-    "message": "ネットワークの成功率を基にして、ガスリミットを提案しています。"
+    "message": "ネットワークの成功率を基に、ガスリミットを提案しています。"
   },
   "gasLimitRequired": {
     "message": "必要ガスリミット"
@@ -269,7 +284,7 @@
     "message": "ガスプライス (GWEI)"
   },
   "gasPriceCalculation": {
-    "message": "ネットワークの成功率を基にして、ガスプライスを提案しています。"
+    "message": "ネットワークの成功率を基に、ガスプライスを提案しています。"
   },
   "gasPriceRequired": {
     "message": "必要ガスプライス"
@@ -320,6 +335,9 @@
   "imported": {
     "message": "インポート完了",
     "description": "status showing that an account has been fully loaded into the keyring"
+  },
+  "importUsingSeed": {
+    "message": "パスフレーズをインポートする"
   },
   "infoHelp": {
     "message": "情報とヘルプ"
@@ -509,7 +527,7 @@
     "message": "アカウントをリセット"
   },
   "restoreFromSeed": {
-    "message": "パスフレーズから復元する"
+    "message": "アカウントのリストア"
   },
   "restoreVault": {
     "message": "ウォレットを復元する"
@@ -673,6 +691,9 @@
   },
   "unknownNetworkId": {
     "message": "不明なネットワークID"
+  },
+  "unlockMessage": {
+    "message": "分散Webに接続しましょう！"
   },
   "usaOnly": {
     "message": "米国居住者のみ",

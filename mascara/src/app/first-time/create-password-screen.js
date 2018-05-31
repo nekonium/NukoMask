@@ -38,7 +38,6 @@ class CreatePasswordScreen extends Component {
 
   constructor (props) {
     super(props)
-    this.animationEventEmitter = new EventEmitter()
   }
 
   componentWillMount () {
@@ -116,7 +115,6 @@ class CreatePasswordScreen extends Component {
         })}>
           {isMascara && <div className="mascara-info first-view-phone-invisible">
             <Mascot
-              animationEventEmitter={this.animationEventEmitter}
               width="225"
               height="225"
             />

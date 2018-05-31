@@ -226,12 +226,13 @@ class AddToken extends Component {
       customDecimalsError,
       autoFilled,
     } = this.state
+    const { t } = this.context;
 
     return (
       <div className="add-token__custom-token-form">
         <TextField
           id="custom-address"
-          label="Token Address"
+          label={t("Token Address")}
           type="text"
           value={customAddress}
           onChange={e => this.handleCustomAddressChange(e.target.value)}
@@ -241,7 +242,7 @@ class AddToken extends Component {
         />
         <TextField
           id="custom-symbol"
-          label="Token Symbol"
+          label={t("Token Symbol")}
           type="text"
           value={customSymbol}
           onChange={e => this.handleCustomSymbolChange(e.target.value)}
@@ -252,7 +253,7 @@ class AddToken extends Component {
         />
         <TextField
           id="custom-decimals"
-          label="Decimals of Precision"
+          label={t("Decimals of Precision")}
           type="number"
           value={customDecimals}
           onChange={e => this.handleCustomDecimalsChange(e.target.value)}
@@ -302,7 +303,7 @@ class AddToken extends Component {
               })}
               onClick={() => this.setState({ displayedTab: SEARCH_TAB })}
             >
-              { this.context.t('search') }
+              { this.context.t('searchTokens') }
             </div>
             <div
               className={classnames('page-container__tab', {

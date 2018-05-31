@@ -39,18 +39,11 @@ class WelcomeScreen extends Component {
 
         h('div.welcome-screen__info', [
 
-          // h(Mascot, {
-          //   animationEventEmitter: this.animationEventEmitter,
-          //   width: '225',
-          //   height: '225',
-          // }),
-          h('img', {
-            style: {
-              width: '180px',
-            },
-            src: "/images/nukoja_green.png",
-          }, ),
-          
+          h(Mascot, {
+            animationEventEmitter: this.animationEventEmitter,
+            width: '225',
+            height: '225',
+          }),          
           h('div.welcome-screen__info__header', 'Welcome to NukoMask Beta'),
 
           h('div.welcome-screen__info__copy', 'NukoMask is a secure identity vault for Nekonium.'),

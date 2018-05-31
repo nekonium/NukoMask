@@ -275,7 +275,7 @@ function setupController (initState, initLangCode) {
     storeTransform(versionifyData),
     storeTransform(persistData),
     (error) => {
-      log.error('MetaMask - Persistence pipeline failed', error)
+      log.error('NukoMask - Persistence pipeline failed', error)
     }
   )
 
@@ -291,10 +291,10 @@ function setupController (initState, initLangCode) {
 
   function persistData (state) {
     if (!state) {
-      throw new Error('MetaMask - updated state is missing', state)
+      throw new Error('NukoMask - updated state is missing', state)
     }
     if (!state.data) {
-      throw new Error('MetaMask - updated state does not have data', state)
+      throw new Error('NukoMask - updated state does not have data', state)
     }
     if (localStore.isSupported) {
       localStore.set(state)
