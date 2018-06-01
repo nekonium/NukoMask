@@ -1,6 +1,6 @@
 .currency-display {
   height: 54px;
-  width: 100%ß;
+  width: 100%;
   border: 1px solid $alto;
   border-radius: 4px;
   background-color: $white;
@@ -50,6 +50,7 @@
   }
 
   &__currency-symbol {
+    font-size: 12px;
     margin-top: 1px;
     color: $scorpion;
   }

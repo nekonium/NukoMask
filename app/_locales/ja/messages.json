@@ -156,6 +156,9 @@
   "customRPC": {
     "message": "カスタムRPC"
   },
+  "decimalsMustZerotoTen": {
+    "message": "小数点桁数は0から36までです。"
+  },
   "decimal": {
     "message": "小数点桁数"
   }, 
@@ -623,6 +626,9 @@
   },
   "submit": {
     "message": "送信"
+  },
+  "symbolBetweenZeroTen": {
+    "message": "シンボルは0から10文字までです。"
   },
   "takesTooLong": {
     "message": "送信に時間がかかりますか?"

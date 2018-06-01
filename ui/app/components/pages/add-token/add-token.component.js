@@ -232,7 +232,7 @@ class AddToken extends Component {
       <div className="add-token__custom-token-form">
         <TextField
           id="custom-address"
-          label={t("Token Address")}
+          label={t("tokenAddress")}
           type="text"
           value={customAddress}
           onChange={e => this.handleCustomAddressChange(e.target.value)}
@@ -242,7 +242,7 @@ class AddToken extends Component {
         />
         <TextField
           id="custom-symbol"
-          label={t("Token Symbol")}
+          label={t("tokenSymbol")}
           type="text"
           value={customSymbol}
           onChange={e => this.handleCustomSymbolChange(e.target.value)}
@@ -253,7 +253,7 @@ class AddToken extends Component {
         />
         <TextField
           id="custom-decimals"
-          label={t("Decimals of Precision")}
+          label={t("decimal")}
           type="number"
           value={customDecimals}
           onChange={e => this.handleCustomDecimalsChange(e.target.value)}
