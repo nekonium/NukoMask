@@ -143,18 +143,18 @@ NetworkDropdown.prototype.render = function () {
       {
         key: 'default',
         closeMenu: () => this.props.hideNetworkDropdown(),
-        onClick: () => props.setRpcTarget('http://localhost:8293'),
+        onClick: () => props.setProviderType('localhost'),
         style: dropdownMenuItemStyle,
       },
       [
-        activeNetwork === 'http://localhost:8293' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
+        providerType === 'localhost' ? h('i.fa.fa-check') : h('.network-check__transparent', '✓'),
         h(NetworkDropdownIcon, {
-          isSelected: activeNetwork === 'http://localhost:8293',
+          isSelected: providerType === 'localhost',
           innerBorder: '1px solid #9b9b9b',
         }),
         h('span.network-name-item', {
           style: {
-            color: activeNetwork === 'http://localhost:8293' ? '#ffffff' : '#9b9b9b',
+            color: providerType === 'localhost' ? '#ffffff' : '#9b9b9b',
           },
         }, this.context.t('localhost')),
       ]
