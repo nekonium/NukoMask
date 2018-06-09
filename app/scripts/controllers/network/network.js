@@ -12,9 +12,10 @@ const log = require('loglevel')
 const {
   MAINNET,
   LOCALHOST,
+  MAINNET_RPC_URL,
 } = require('./enums')
 const LOCALHOST_RPC_URL = 'http://localhost:8293'
-const INFURA_PROVIDER_TYPES = [MAINNET]
+const INFURA_PROVIDER_TYPES = []
 
 const env = process.env.METAMASK_ENV
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
@@ -119,6 +120,8 @@ module.exports = class NetworkController extends EventEmitter {
     if (isInfura) {
       this._configureInfuraProvider(opts)
     // other type-based rpc endpoints
+    } else if (type === MAINNET) {
+      this._configureStandardProvider({ rpcUrl: MAINNET_RPC_URL })
     } else if (type === LOCALHOST) {
       this._configureStandardProvider({ rpcUrl: LOCALHOST_RPC_URL })
     // url-based rpc endpoints
