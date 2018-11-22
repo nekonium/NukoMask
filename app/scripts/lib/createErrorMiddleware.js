@@ -47,7 +47,7 @@ function sanitizeRPCError (error, override) {
 
 /**
  * json-rpc-engine middleware that both logs standard and non-standard error
- * messages and ends middleware stack traversal if an error is encountered
+ * messages
  *
  * @param {MiddlewareConfig} [config={override:true}] - Middleware configuration
  * @returns {Function} json-rpc-engine middleware function
@@ -59,6 +59,7 @@ function createErrorMiddleware ({ override = true } = {}) {
       if (!error) { return done() }
       sanitizeRPCError(error)
       log.error(`MetaMask - RPC Error: ${error.message}`, error)
+	  return done()
     })
   }
 }

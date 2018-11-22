@@ -15,7 +15,7 @@ const {
   MAINNET_RPC_URL,
 } = require('./enums')
 const LOCALHOST_RPC_URL = 'http://localhost:8293'
-const INFURA_PROVIDER_TYPES = []
+const INFURA_PROVIDER_TYPES = [MAINNET]
 
 const env = process.env.METAMASK_ENV
 const METAMASK_DEBUG = process.env.METAMASK_DEBUG
@@ -117,10 +117,13 @@ module.exports = class NetworkController extends EventEmitter {
     const { type, rpcTarget } = opts
     // infura type-based endpoints
     const isInfura = INFURA_PROVIDER_TYPES.includes(type)
-    if (isInfura) {
+	// I believe we can use infuria to lookup nuko mainnet.
+	// Someone would need to register and set it up with the nuko MAINNET_RPC_URL.
+	// Then figure out where the Infuria API key would go
+    /*if (isInfura) {
       this._configureInfuraProvider(opts)
     // other type-based rpc endpoints
-    } else if (type === MAINNET) {
+    } else*/ if (type === MAINNET) {
       this._configureStandardProvider({ rpcUrl: MAINNET_RPC_URL })
     } else if (type === LOCALHOST) {
       this._configureStandardProvider({ rpcUrl: LOCALHOST_RPC_URL })
@@ -177,7 +180,7 @@ module.exports = class NetworkController extends EventEmitter {
   }
 
   _logBlock (block) {
-    log.info(`BLOCK CHANGED: #${block.number.toString('hex')} 0x${block.hash.toString('hex')}`)
+    //log.debug(`BLOCK CHANGED: #${block.number.toString('hex')} 0x${block.hash.toString('hex')}`)
     this.verifyNetwork()
   }
 }
