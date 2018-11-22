@@ -117,9 +117,9 @@ module.exports = class NetworkController extends EventEmitter {
     const { type, rpcTarget } = opts
     // infura type-based endpoints
     const isInfura = INFURA_PROVIDER_TYPES.includes(type)
-	// I believe we can use infuria to lookup nuko mainnet.
+	// I believe we can use infura to lookup nuko mainnet.
 	// Someone would need to register and set it up with the nuko MAINNET_RPC_URL.
-	// Then figure out where the Infuria API key would go
+	// Then figure out where the Infura API key would go
     /*if (isInfura) {
       this._configureInfuraProvider(opts)
     // other type-based rpc endpoints
